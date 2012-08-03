@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: goldteeth-dev
+test:
+  adapter: postgresql
+  database: goldteeth-test
