@@ -13,6 +13,7 @@ gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem 'nested_form', :git => 'https://github.com/ryanb/nested_form.git'
 gem 'rmagick'
 gem "fog", "~> 1.3.1"
+gem 'haml-rails'
 
 # Gems used only for assets and not required in production environments by default.
 group :assets do

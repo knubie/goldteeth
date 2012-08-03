@@ -1,4 +1,10 @@
 Goldteeth::Application.routes.draw do
+  get "pages/artists"
+
+  get "pages/news"
+
+  get "pages/information"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
