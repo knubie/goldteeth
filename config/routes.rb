@@ -9,7 +9,9 @@ Goldteeth::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  root :to => "home#index"
+  root :to => "pages#artists"
+  get "news" => "pages#news"
+  get "info" => "pages#information"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
