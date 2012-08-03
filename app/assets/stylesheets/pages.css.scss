@@ -1,8 +1,50 @@
 // Grays
 $g90: #e5e5e5;
+$g80: #cccccc;
+$g50: #808080;
+$g20: #333333;
 
-#header {
+body {
+  text-align: center;
+  font-family: georgia;
+}
+
+#container {
   width: 900px;
-  height: 80px;
-  border-bottom: 1px solid $g90;
+  margin: 0 auto;
+  #header {
+    width: 900px;
+    height: 80px;
+    border-bottom: 1px solid $g90;
+    margin-bottom: 12px;
+    vertical-align: baseline;
+    position: fixed;
+    img {
+      display: inline-block;
+      position: absolute;
+      bottom: 12px;
+      left: 0px;
+    }
+    #nav {
+      display: inline-block;
+      position: absolute;
+      bottom: 12px;
+      right: 0px;
+      color: $g20;
+      text-transform: uppercase;
+      font-size: 12px;
+      cursor: default;
+      .slash {
+        color: $g80;
+        display: inline;
+      }
+      a:link, a:visited {
+        color: $g50;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $g20;
+      }
+    }
+  }
 }

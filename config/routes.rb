@@ -1,9 +1,4 @@
 Goldteeth::Application.routes.draw do
-  get "pages/artists"
-
-  get "pages/news"
-
-  get "pages/information"
 
   ActiveAdmin.routes(self)
 
@@ -11,7 +6,7 @@ Goldteeth::Application.routes.draw do
 
   root :to => "pages#artists"
   get "news" => "pages#news"
-  get "info" => "pages#information"
+  get "info" => "pages#info"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

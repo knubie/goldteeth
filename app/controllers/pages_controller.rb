@@ -1,10 +1,13 @@
 class PagesController < ApplicationController
   def artists
+    @page = "artists"
   end
 
   def news
+    @page = "news"
   end
 
-  def information
+  def info
+    @page = "info"
   end
 end
