@@ -9,6 +9,8 @@ body {
   font-family: georgia;
 }
 
+//=============== Header/Footer ===============
+
 #container {
   width: 900px;
   margin: 0 auto;
@@ -16,9 +18,11 @@ body {
     width: 900px;
     height: 80px;
     border-bottom: 1px solid $g90;
+    background-color: white;
     margin-bottom: 12px;
     vertical-align: baseline;
     position: fixed;
+    top: 0;
     img {
       display: inline-block;
       position: absolute;
@@ -46,5 +50,35 @@ body {
         color: $g20;
       }
     }
+  }
+  #footer {
+    width: 900px;
+    border-top: 1px solid $g90;
+    font-size: 12px;
+    text-align: left;
+    padding-top: 20px;
+  }
+}
+
+//=============== Artists ===============
+
+#artists-container {
+  margin-top: 128px;
+  text-align: left;
+  .artist {
+    font-size: 16px;
+    color: $g20;
+    display: inline-block;
+    margin-bottom: 43px;
+  }
+  img {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .artist:nth-child(3n+1) {
+    margin-right: 39px;
+  }
+  .artist:nth-child(3n+3) {
+    margin-left: 39px;
   }
 }

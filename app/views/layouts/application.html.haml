@@ -17,4 +17,11 @@
           = if @page != "news" then link_to "news", root_path else "news" end
           .slash &nbsp;/&nbsp;
           = if @page != "info" then link_to "info", root_path else "info" end
-    = yield
+      = yield
+      #footer
+        10 East 23rd Street, 5th Floor, New York, NY 10010
+        %br
+        %br
+        (646) 405-1256 office  /  (646) 405-1252 mobile
+        %br
+        = link_to "info@goldteethandco.com", "mailto:info@goldteethandco.com"

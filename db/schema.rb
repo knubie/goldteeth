@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20120803195407) do
   create_table "artists", :force => true do |t|
     t.string   "name"
     t.text     "bio"
+    t.string   "image"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
