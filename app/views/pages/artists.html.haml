@@ -1,13 +1,6 @@
 #artists-container
-  .artist
-    = image_tag "artist.jpg"
-    Benjamin Bouchet
-  .artist
-    = image_tag "artist.jpg"
-    Benjamin Bouchet
-  .artist
-    = image_tag "artist.jpg"
-    Benjamin Bouchet
-  .artist
-    = image_tag "artist.jpg"
-    Benjamin Bouchet
+  - @artists.each do |artist|
+    = link_to "/#{artist.name.downcase.gsub(" ", "-")}" do
+      .artist
+        = image_tag artist.image.url
+        = artist.name

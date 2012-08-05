@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def artists
     @page = "artists"
+    @artists = Artist.all
   end
 
   def news
