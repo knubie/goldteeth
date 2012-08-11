@@ -1,5 +1,7 @@
 Goldteeth::Application.routes.draw do
 
+  get "artists/show"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config

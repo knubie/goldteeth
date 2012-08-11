@@ -5,12 +5,12 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
+  %body.holmes-debug
     %p.notice= notice
     %p.alert= alert
     #container
       #header
-        = image_tag "logo.gif"
+        = link_to image_tag("logo.gif"), root_path
         #nav
           = if @page != "artists" then link_to "artists", root_path else "artists" end
           .slash &nbsp;/&nbsp;
@@ -20,7 +20,6 @@
       = yield
       #footer
         10 East 23rd Street, 5th Floor, New York, NY 10010
-        %br
         %br
         (646) 405-1256 office  /  (646) 405-1252 mobile
         %br

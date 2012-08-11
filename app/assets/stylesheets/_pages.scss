@@ -1,14 +1,3 @@
-// Grays
-$g90: #e5e5e5;
-$g80: #cccccc;
-$g50: #808080;
-$g20: #333333;
-
-body {
-  text-align: center;
-  font-family: georgia;
-}
-
 //=============== Header/Footer ===============
 
 #container {
@@ -62,8 +51,8 @@ body {
 
 //=============== Artists ===============
 
-#artists-container {
-  margin-top: 128px;
+#content-container {
+  margin-top: 110px;
   text-align: left;
   .artist {
     font-size: 16px;
@@ -80,5 +69,31 @@ body {
   }
   .artist:nth-child(3n+3) {
     margin-left: 39px;
+  }
+}
+
+#breadcrumb {
+  font-size: 24px;
+  color: $g40;
+  letter-spacing: -0.5px;
+  margin-bottom: 30px;
+}
+.subnav {
+  padding: 16px 0;
+  border-top: 1px solid $g90;
+  width: 137px;
+  font-size: 12px;
+  color: $g20;
+  line-height: 20px;
+  cursor: default;
+  .active { font-weight: bold; }
+  a:link, a:visited {
+    color: $g40;
+    text-decoration: none;
+    font-weight: normal;
+    display: block;
+  }
+  a:hover {
+    color: $g20;
   }
 }

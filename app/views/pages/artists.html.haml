@@ -1,4 +1,4 @@
-#artists-container
+#content-container
   - @artists.each do |artist|
     = link_to "/#{artist.name.downcase.gsub(" ", "-")}" do
       .artist

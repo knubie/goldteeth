@@ -1,0 +1,12 @@
+#content-container
+  #breadcrumb
+    = @artist.name
+  .subnav
+    .active all
+    = link_to "commissioned", root_path
+    = link_to "studio", root_path
+    = link_to "environments", root_path
+    %br
+    = link_to "bio", root_path
+  .subnav
+    custom portfolio
