@@ -64,36 +64,46 @@
     display: block;
     margin-bottom: 8px;
   }
-  .artist:nth-child(3n+1) {
-    margin-right: 39px;
+  .artist:nth-child(3n+1) { margin-right: 39px; }
+  .artist:nth-child(3n+3) { margin-left: 39px; }
+  #breadcrumb {
+    font-size: 24px;
+    color: $g40;
+    letter-spacing: -0.5px;
+    margin-bottom: 30px;
   }
-  .artist:nth-child(3n+3) {
-    margin-left: 39px;
+  .portfolio {
+    margin-bottom: 50px;
+    .project {
+      margin-right: 8px;
+      width: 216px;
+      display: inline-block;
+      margin-bottom: 38px;
+      img { width: 216px; }
+      .caption {
+        margin-top: 18px;
+        border-top: 1px solid $g90;
+        padding-top: 6px;
+        color: $g20;
+      }
+    }
+    .project:nth-child(4n+4) { margin: 0; }
+  }
+  .artist-heading {
+    font-size: 24px;
+    color: $g40;
+    letter-spacing: -0.5px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1px solid $g90;
+  }
+  .recent-work {
+    margin-bottom: 50px;
+  }
+  .bio {
+    font-size: 14px;
+    color: $g40;
   }
 }
 
-#breadcrumb {
-  font-size: 24px;
-  color: $g40;
-  letter-spacing: -0.5px;
-  margin-bottom: 30px;
-}
-.subnav {
-  padding: 16px 0;
-  border-top: 1px solid $g90;
-  width: 137px;
-  font-size: 12px;
-  color: $g20;
-  line-height: 20px;
-  cursor: default;
-  .active { font-weight: bold; }
-  a:link, a:visited {
-    color: $g40;
-    text-decoration: none;
-    font-weight: normal;
-    display: block;
-  }
-  a:hover {
-    color: $g20;
-  }
-}
+

@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20120803195407) do
     t.string   "title"
     t.text     "subtitle"
     t.string   "client"
+    t.string   "image"
     t.integer  "artist_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

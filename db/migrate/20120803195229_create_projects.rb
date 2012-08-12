@@ -4,6 +4,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :title
       t.text :subtitle
       t.string :client
+      t.string :image
       t.references :artist
 
       t.timestamps
