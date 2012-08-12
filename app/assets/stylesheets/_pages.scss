@@ -71,6 +71,9 @@
     color: $g40;
     letter-spacing: -0.5px;
     margin-bottom: 30px;
+    div { display: inline }
+    .slash { color: $g80; }
+    .second { color: $g60; }
   }
   .portfolio {
     margin-bottom: 50px;
@@ -91,7 +94,7 @@
   }
   .artist-heading {
     font-size: 24px;
-    color: $g40;
+    color: $g60;
     letter-spacing: -0.5px;
     padding-top: 30px;
     margin-bottom: 30px;
@@ -102,7 +105,11 @@
   }
   .bio {
     font-size: 14px;
+    margin-bottom: 50px;
     color: $g40;
+    line-height: 20px;
+    width: 500px;
+    a:link, a:visited { color: $g60; }
   }
 }
 

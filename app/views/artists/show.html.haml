@@ -1,6 +1,8 @@
 #content-container
   #breadcrumb
     = @artist.name
+    .slash &nbsp;/&nbsp;
+    .second portfolio
   .portfolio
     - @artist.projects.each do |project|
       .project
@@ -13,5 +15,5 @@
   .bio
     .artist-heading
       biography
-    = @artist.bio
+    = @artist.bio.html_safe
     
