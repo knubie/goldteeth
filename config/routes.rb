@@ -12,6 +12,7 @@ Goldteeth::Application.routes.draw do
   get "news" => "pages#news"
   get "info" => "pages#info"
   get ":name" => "artists#show"
+  get ":name/:title" => "projects#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,8 +1,16 @@
-= semantic_form_for [:admin, @project] do |f|
+= semantic_nested_form_for [:admin, @project], :html => { :multipart => true } do |f|
   = f.inputs do
     = f.input :artist
     = f.input :title
     = f.input :subtitle
     = f.input :client
     = f.input :image
+  = f.inputs "Slides" do
+    = f.fields_for :slides do |b|
+      = b.input :image, :as => :file
+      = f.input :client
+      - unless b.object.image.url.blank?
+        image preview
+      = b.link_to_remove "Remove slide"
+    = f.link_to_add "Add a slide", :slides
   = f.actions

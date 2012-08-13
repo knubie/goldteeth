@@ -1,0 +1,13 @@
+#content-container
+  #breadcrumb
+    = @artist.name
+    .slash &nbsp;/&nbsp;
+    .second= @project.title
+  #controls
+    #left
+      4/15 | prev | next
+    #right
+      share tweet add to portfolio
+  #slides
+    - @project.slides.each do |slide|
+      = image_tag slide.image.url

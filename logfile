@@ -5,3 +5,6 @@ FATAL:  database "goldteeth-dev" does not exist
 LOG:  database system was shut down at 2012-08-12 09:56:10 EDT
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+LOG:  database system was shut down at 2012-08-12 15:51:10 EDT
+LOG:  autovacuum launcher started
+LOG:  database system is ready to accept connections

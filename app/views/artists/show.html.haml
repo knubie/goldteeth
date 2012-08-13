@@ -5,10 +5,11 @@
     .second portfolio
   .portfolio
     - @artist.projects.each do |project|
-      .project
-        = image_tag project.image.url
-        .caption
-          = project.title
+      = link_to "/#{@artist.name.downcase.gsub(" ", "-")}/#{project.title.downcase.gsub(" ", "-")}" do
+        .project
+          = image_tag project.image.url
+          .caption
+            = project.title
   .recent-work
     .artist-heading
       recent work
