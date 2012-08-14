@@ -8,8 +8,8 @@ Goldteeth::Application.routes.draw do
 
   resources :artists
 
-  root :to => "pages#artists"
-  get "news" => "pages#news"
+  root :to => "artists#index"
+  get "news" => "news#index"
   get "info" => "pages#info"
   get "add/:slide" => "lightbox#add"
   get "remove/:slide" => "lightbox#remove"

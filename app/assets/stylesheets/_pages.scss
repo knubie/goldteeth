@@ -10,7 +10,7 @@
     background-color: white;
     margin-bottom: 12px;
     vertical-align: baseline;
-    position: fixed;
+    position: absolute;
     top: 0;
     img {
       display: inline-block;
@@ -74,9 +74,8 @@
     div { display: inline }
     .slash { color: $g80; }
     .second { color: $g60; }
-    a {
-      color: $g40;
-    }
+    a { color: $g40; }
+    a:hover { color: $g20; }
   }
   .portfolio {
     margin-bottom: 50px;
@@ -127,7 +126,13 @@
   #left {
     font-size: 14px;
     float: left;
-    color: $g20;
+    color: $g60;
+    a, #current-slide, #total-slides { color: $g20; }
+    #current-slide {
+      text-align: right;
+      width: 14px;
+      display: inline-block;
+    }
     img {
       display: inline;
       margin-bottom: -2px;
@@ -148,5 +153,9 @@
   #slides {
     clear: both;
     text-align: center;
+  }
+  #subtext {
+    margin-top: 25px;
+    margin-bottom: 100px;
   }
 }

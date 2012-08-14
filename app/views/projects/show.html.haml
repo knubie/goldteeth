@@ -6,8 +6,9 @@
   #controls
     #left
       = image_tag "grid.gif"
-      %span#counter= ''
-      = "/#{@project.slides.length}"
+      %span#current-slide= ''
+      \/
+      %span#total-slides= "#{@project.slides.length}"
       &nbsp;&nbsp;|&nbsp;&nbsp;
       = link_to 'prev', 'javascript:void(0);', :id => 'prev'
       &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -25,3 +26,8 @@
   #slides
     - @project.slides.each do |slide|
       = image_tag slide.image.url
+  #subtext
+    - if @project.client
+      #client= @project.client
+    - if @project.subtitle
+      #description= @project.subtitle
