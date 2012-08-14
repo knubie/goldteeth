@@ -11,6 +11,9 @@ Goldteeth::Application.routes.draw do
   root :to => "pages#artists"
   get "news" => "pages#news"
   get "info" => "pages#info"
+  get "add/:slide" => "lightbox#add"
+  get "remove/:slide" => "lightbox#remove"
+  get "clear" => "lightbox#clear"
   get ":name" => "artists#show"
   get ":name/:title" => "projects#show"
 
