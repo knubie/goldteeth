@@ -27,6 +27,7 @@
             $currentSlide = $next
             if direction is 'next' then slideIndex++ else slideIndex--
             $counter.html(slideIndex)
+            history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState?
             $currentSlide.fadeIn ->
               transitioning = false
           else
@@ -37,6 +38,7 @@
               $currentSlide = $images.last()
               slideIndex = $images.length
             $counter.html(slideIndex)
+            history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState?
             $currentSlide.fadeIn ->
               transitioning = false
 
