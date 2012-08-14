@@ -1,13 +1,27 @@
 #content-container
   #breadcrumb
-    = @artist.name
+    = link_to @artist.name, "/#{@artist.name.downcase.gsub(" ", "-")}"
     .slash &nbsp;/&nbsp;
     .second= @project.title
   #controls
     #left
-      4/15 | prev | next
+      = image_tag "grid.gif"
+      %span#counter= ''
+      = "/#{@project.slides.length}"
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      = link_to 'prev', 'javascript:void(0);', :id => 'prev'
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      = link_to 'next', 'javascript:void(0);', :id => 'next'
     #right
-      share tweet add to portfolio
+      %a(href="/")
+        = image_tag "facebook.gif"
+        share
+      %a(href="/")
+        = image_tag "twitter.gif"
+        tweet
+      %a(href="/")
+        = image_tag "add_to_lightbox.gif", :style => "margin-bottom: -2px;"
+        add to portfolio
   #slides
     - @project.slides.each do |slide|
       = image_tag slide.image.url
