@@ -1,0 +1,4 @@
+#breadcrumb
+  = link_to @artist.name, "/#{@artist.name.downcase.gsub(" ", "-")}"
+  .slash &nbsp;/&nbsp;
+  .second= @project.title

@@ -5,12 +5,12 @@
     = f.input :subtitle
     = f.input :client
     = f.input :image
-  = f.inputs "Slides" do
-    = f.fields_for :slides do |b|
-      = b.input :image, :as => :file
-      = f.input :client
+  = f.fields_for :slides do |b|
+    = f.inputs do
+      = b.input :image, :as => :file, :label => false
+      = f.input :client, :label =>  false, :input_html => {:placeholder => "Client.."}
       - unless b.object.image.url.blank?
-        image preview
+        = image_tag b.object.image.thumb.url, :style => "padding: 10px; display: block;"
       = b.link_to_remove "Remove slide"
-    = f.link_to_add "Add a slide", :slides
+  = f.link_to_add "Add a slide", :slides
   = f.actions

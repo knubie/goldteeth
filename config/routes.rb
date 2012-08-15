@@ -15,6 +15,7 @@ Goldteeth::Application.routes.draw do
   get "remove/:slide" => "lightbox#remove"
   get "clear" => "lightbox#clear"
   get ":name" => "artists#show"
+  get ":name/:title/grid" => "projects#grid"
   get ":name/:title" => "projects#show"
 
   # The priority is based upon order of creation:

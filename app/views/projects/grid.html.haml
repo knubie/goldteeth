@@ -1,0 +1,5 @@
+#content-container
+  = render "breadcrumb"
+  #grid
+    - @project.slides.each do |slide|
+      = image_tag slide.image.thumb.url

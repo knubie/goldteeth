@@ -1,6 +1,9 @@
 $ ->
-  #$('#container').masonry
-  #    itemSelector: '#slides-grid > img'
+  $('#grid').imagesLoaded ->
+    $('#grid').masonry
+        itemSelector: 'img'
+        gutterWidth: 12
+
   $(document).scroll ->
     if $(document).scrollTop() >= 30
       $('#header').css

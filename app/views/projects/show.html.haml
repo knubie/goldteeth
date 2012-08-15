@@ -1,11 +1,8 @@
 #content-container
-  #breadcrumb
-    = link_to @artist.name, "/#{@artist.name.downcase.gsub(" ", "-")}"
-    .slash &nbsp;/&nbsp;
-    .second= @project.title
+  = render "breadcrumb"
   #controls
     #left
-      = image_tag "grid.gif"
+      = link_to image_tag("grid.gif"), "#{request.fullpath}/grid"
       %span#current-slide= ''
       \/
       %span#total-slides= "#{@project.slides.length}"
