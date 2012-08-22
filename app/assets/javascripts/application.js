@@ -13,4 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery_nested_form
-//= require_tree .
+//= require artists
+//= require jquery.imagesloaded.min
+//= require jquery.masonry.min
+//= require slides
+//= require pages
+//= require projects

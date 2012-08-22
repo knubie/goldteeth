@@ -17,7 +17,7 @@
           .slash &nbsp;/&nbsp;
           = if @page != "news" then link_to "news", root_path else "news" end
           .slash &nbsp;/&nbsp;
-          = if @page != "info" then link_to "information", root_path else "lightbox" end
+          = if @page != "info" then link_to "information", "/information" else "lightbox" end
           .slash &nbsp;/&nbsp;
           = if @page != "lightbox" then link_to "lightbox", root_path else "lightbox" end
       = yield

@@ -159,3 +159,39 @@
     margin-bottom: 100px;
   }
 }
+
+//=============== Information ===============
+
+#content-container {
+  .text {
+    font-size: 14px;
+    margin-bottom: 50px;
+    padding-right: 30px;
+    border-right: 1px solid $g90;
+    color: $g20;
+    line-height: 22px;
+    width: 500px;
+    a:link, a:visited { color: $g60; }
+  }
+  #twitter {
+    #twitter-name {
+      font-weight: bold;
+      font-size: 12px;
+    }
+    .tweet {
+      color: $g20;
+      font-size: 12px;
+      line-height: 20px;
+      width: 200px;
+      padding: 0 10px;
+      border-right: 1px solid $g90;
+      display: inline-block;
+      a:link {
+        color: $g60;
+        text-decoration: underline;
+      }
+      .tweet:nth-child(1) { padding-left: 0; }
+      .tweet:nth-child(4) { border: 0; }
+    }
+  }
+}
