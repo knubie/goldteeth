@@ -77,23 +77,7 @@
     a { color: $g40; }
     a:hover { color: $g20; }
   }
-  .portfolio {
-    margin-bottom: 50px;
-    .project {
-      margin-right: 8px;
-      width: 216px;
-      display: inline-block;
-      margin-bottom: 38px;
-      img { width: 216px; }
-      .caption {
-        margin-top: 18px;
-        border-top: 1px solid $g90;
-        padding-top: 6px;
-        color: $g20;
-      }
-    }
-    .project:nth-child(4n+4) { margin: 0; }
-  }
+  .artist-section { margin-bottom: 50px; }
   .artist-heading {
     font-size: 24px;
     color: $g60;
@@ -102,12 +86,23 @@
     margin-bottom: 30px;
     border-top: 1px solid $g90;
   }
-  .recent-work {
-    margin-bottom: 50px;
+  .project {
+    margin-right: 8px;
+    width: 216px;
+    display: inline-block;
+    margin-bottom: 38px;
+    img { width: 216px; }
+    .caption {
+      margin-top: 18px;
+      border-top: 1px solid $g90;
+      padding-top: 6px;
+      color: $g20;
+      font-size: 16px;
+    }
   }
+  .project:nth-child(4n+4) { margin: 0; }
   .bio {
     font-size: 14px;
-    margin-bottom: 50px;
     color: $g40;
     line-height: 20px;
     width: 500px;
@@ -195,3 +190,41 @@
     }
   }
 }
+
+//=============== News ===============
+
+#content_container {
+  #view-as-grid {
+    margin-left: 22px;
+    font-size: 11px;
+    color: $g40;
+    text-transform: uppercase;
+    img { margin-right: 8px; }
+  }
+  .post {
+    margin-bottom: 65px;
+    border-bottom: 1px solid $g90;
+    color: $g20;
+    .date {
+      margin-top: 30px;
+      line-height: 24px;
+      font-size: 18px;
+    }
+    .body {
+      font-size: 14px;
+      line-height: 22px;
+    }
+    .social {
+      font-size: 11px;
+      color: $g40;
+      text-transform: uppercase;
+      margin: 20px 0;
+      a {
+        color: $g40;
+        margin-right: 17px;
+        img { margin-right: 4px; }
+      }
+    }
+  }
+}
+

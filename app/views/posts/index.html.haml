@@ -1,0 +1,27 @@
+#content-container
+  #breadcrumb
+    News
+    #view-as-grid
+      = link_to 'news/grid' do
+        = image_tag("grid.gif")
+        view as grid
+
+  #news
+    - @posts.each do |post|
+      .post
+        - post.post_images.each do |post_image|
+          = image_tag post_image.image.url
+        .date
+          = post.created_at.getlocal.strftime("%b %e, %Y")
+        .body
+          = post.body.html_safe
+        .social
+          %a(href="/")
+            = image_tag "facebook.gif"
+            share
+          %a(href="/")
+            = image_tag "twitter.gif"
+            tweet
+          %a(href="/")
+            = image_tag "link.gif"
+            link

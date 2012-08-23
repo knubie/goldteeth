@@ -9,7 +9,7 @@ Goldteeth::Application.routes.draw do
   resources :artists
 
   root :to => "artists#index"
-  get "news" => "news#index"
+  get "news" => "posts#index"
   get "information" => "information#show"
   get "add/:slide" => "lightbox#add"
   get "remove/:slide" => "lightbox#remove"
