@@ -199,14 +199,14 @@
     font-size: 11px;
     color: $g40;
     text-transform: uppercase;
-    img { margin-right: 8px; }
+    img { margin: 0 5px -1px 0; }
   }
   .post {
     margin-bottom: 65px;
     border-bottom: 1px solid $g90;
     color: $g20;
+    .slide { margin-bottom: 30px; }
     .date {
-      margin-top: 30px;
       line-height: 24px;
       font-size: 18px;
     }

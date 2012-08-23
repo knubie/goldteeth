@@ -10,7 +10,11 @@
     - @posts.each do |post|
       .post
         - post.post_images.each do |post_image|
-          = image_tag post_image.image.url
+          - if post.post_images.length > 1
+            .slides
+              = image_tag post_image.image.url, :class => 'slide'
+          - else
+            = image_tag post_image.image.url, :class => 'slide'
         .date
           = post.created_at.getlocal.strftime("%b %e, %Y")
         .body
@@ -22,6 +26,6 @@
           %a(href="/")
             = image_tag "twitter.gif"
             tweet
-          %a(href="/")
+          = link_to "news/#{post.id}" do
             = image_tag "link.gif"
             link

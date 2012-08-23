@@ -1,0 +1,24 @@
+#content-container
+  #breadcrumb
+    = link_to "News", "/news"
+    .slash &nbsp;/&nbsp;
+    .second
+      = @post.created_at.getlocal.strftime("%b %e, %Y")
+  #news
+    .post
+      - @post.post_images.each do |post_image|
+        - if @post.post_images.length > 1
+          .slides
+            = image_tag post_image.image.url, :class => 'slide'
+        - else
+          = image_tag post_image.image.url, :class => 'slide'
+      .body
+        = @post.body.html_safe
+      .social
+        / = link_to "http://www.facebook.com/dialog/feed?app_id=123050457758183&link=#{request.protocol}#{request.host_with_port}#{request.fullpath}&picture=#{URI::encode(@post.post_images.first.image.url)}&name=Goldteeth%26Co&caption=#{URI::encode(@post.created_at.getlocal.strftime("%b %e, %Y"))}" do
+        = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=Goldteeth%26Co&p[summary]=summary&p[url]=#{request.protocol}#{request.host_with_port}#{request.fullpath}&p[images][0]=#{@post.post_images.first.image.url}" do
+          = image_tag "facebook.gif"
+          share
+        %a(href="/")
+          = image_tag "twitter.gif"
+          tweet

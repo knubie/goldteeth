@@ -10,14 +10,15 @@
           = image_tag project.image.url
           .caption
             = project.title
-  .artist-section.recent-work
-    .artist-heading
-      recent work
-    - Post.find_all_by_artist_id(@artist.id)[0..3].each do |post|
-      .project
-        = image_tag post.thumb.url
-        .caption
-          = post.client
+  - unless @recent_work.empty?
+    .artist-section.recent-work
+      .artist-heading
+        recent work
+      - @recent_work.each do |post|
+        .project
+          = image_tag post.thumb.url
+          .caption
+            = post.client
   .artist-section.bio
     .artist-heading
       biography

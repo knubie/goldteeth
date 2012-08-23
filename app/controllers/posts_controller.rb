@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @page = 'news'
+    @post = Post.find params[:id]
   end
 
 end
