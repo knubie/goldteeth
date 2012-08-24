@@ -153,6 +153,9 @@
     margin-top: 25px;
     margin-bottom: 100px;
   }
+  #grid {
+    img { margin-bottom: 12px; }
+  }
 }
 
 //=============== Information ===============
@@ -172,6 +175,7 @@
     #twitter-name {
       font-weight: bold;
       font-size: 12px;
+      margin-bottom: 10px;
     }
     .tweet {
       color: $g20;
@@ -181,12 +185,18 @@
       padding: 0 10px;
       border-right: 1px solid $g90;
       display: inline-block;
+      vertical-align: top;
       a:link {
         color: $g60;
         text-decoration: underline;
       }
       .tweet:nth-child(1) { padding-left: 0; }
       .tweet:nth-child(4) { border: 0; }
+      .ago {
+        font-size: 10px;
+        color: $g40;
+        font-style: italic;
+      }
     }
   }
 }

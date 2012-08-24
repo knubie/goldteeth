@@ -7,4 +7,6 @@
     #twitter-name @goldteethandco
     - Twitter.user_timeline("goldteethandco", :count => 4).each do |tweet|
       .tweet
+        .ago
+          = "#{time_ago_in_words tweet.created_at} ago"
         = tweet.text.gsub(/(http:\/\/\S*)/, '<a href="\1" target="_blank">\1</a>').html_safe

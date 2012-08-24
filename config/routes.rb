@@ -12,6 +12,7 @@ Goldteeth::Application.routes.draw do
   #get "admin/projects/:id/sort" => "projects#sort"
   post "admin/projects/:id/update_sort" => "projects#update_sort"
   get "news" => "posts#index"
+  get "news/grid" => "posts#grid"
   get "news/:id" => "posts#show"
   get "information" => "information#show"
   get "add/:slide" => "lightbox#add"

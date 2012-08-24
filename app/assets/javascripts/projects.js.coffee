@@ -4,6 +4,11 @@ $ ->
         itemSelector: 'img'
         gutterWidth: 12
 
+  $('#news-grid').imagesLoaded ->
+    $('#news-grid').masonry
+        itemSelector: '.project'
+        gutterWidth: 12
+
   $(document).scroll ->
     if $(document).scrollTop() >= 30
       $('#header').css

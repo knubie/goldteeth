@@ -1,0 +1,13 @@
+#content-container
+  #breadcrumb
+    News
+    #view-as-grid
+      = link_to '/news' do
+        = image_tag("list.gif")
+        view as list
+  #news-grid
+    - @posts.each do |post|
+      .project
+        = image_tag post.thumb.url
+        .caption
+          = post.client

@@ -10,4 +10,9 @@ class PostsController < ApplicationController
     @post = Post.find params[:id]
   end
 
+  def grid
+    @page = 'news'
+    @posts = Post.all
+  end
+
 end
