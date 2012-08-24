@@ -9,6 +9,8 @@ Goldteeth::Application.routes.draw do
   resources :artists
 
   root :to => "artists#index"
+  get "admin/projects/:id/sort" => "projects#sort"
+  post "admin/projects/:id/update_sort" => "projects#update_sort"
   get "news" => "posts#index"
   get "news/:id" => "posts#show"
   get "information" => "information#show"
