@@ -4,11 +4,6 @@ $ ->
         itemSelector: 'img'
         gutterWidth: 12
 
-  $('#sortable-slides').sortable
-    axis: 'y'
-    update: ->
-      $.post "update_sort", $(this).sortable('serialize')
-
   $(document).scroll ->
     if $(document).scrollTop() >= 30
       $('#header').css

@@ -10,4 +10,11 @@ $(document).ready(function() {
   $('.wysiwyg').wysihtml5({
     "image": false
   });
+  $('#sortable-slides').sortable({
+    axis: 'y',
+    update: function() {
+      $.post("update_sort", $(this).sortable('serialize'))
+    }
+  });
+
 });
