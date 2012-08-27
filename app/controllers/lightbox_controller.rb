@@ -22,4 +22,11 @@ class LightboxController < ApplicationController
     end
   end
 
+  def pdf
+    if session[:slides].empty?
+      redirect_to :root
+    end
+    render :layout => false
+  end
+
 end

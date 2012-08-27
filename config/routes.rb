@@ -17,6 +17,7 @@ Goldteeth::Application.routes.draw do
   get "information" => "information#show"
   get "add/:slide" => "lightbox#add"
   get "remove/:slide" => "lightbox#remove"
+  get "lightbox/pdf" => "lightbox#pdf"
   get "clear" => "lightbox#clear"
   get ":name" => "artists#show"
   get ":name/:title/grid" => "projects#grid"

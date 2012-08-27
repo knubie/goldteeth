@@ -18,3 +18,17 @@ STATEMENT:              SELECT a.attname, format_type(a.atttypid, a.atttypmod), 
 	
 ERROR:  syntax error at or near "post" at character 51
 STATEMENT:  SELECT COUNT(*) FROM "posts"  WHERE (title = test post)
+LOG:  database system was interrupted; last known up at 2012-08-24 09:33:26 EDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/1C1E6A0
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2012-08-24 19:36:09 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

@@ -15,6 +15,7 @@
     $next = $(options.next)
     $prev = $(options.prev)
     $counter = $(options.counter)
+    $lightbox = $("#lightbox")
 
     transitioning = false
 
@@ -23,24 +24,22 @@
         transitioning = true
         $currentSlide.fadeOut ->
           if direction is 'next' then $next = $currentSlide.next() else $next = $currentSlide.prev()
-          if $next.length
+          if $next.length # If there's another slide
             $currentSlide = $next
             if direction is 'next' then slideIndex++ else slideIndex--
-            $counter.html(slideIndex)
-            history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState?
-            $currentSlide.fadeIn ->
-              transitioning = false
-          else
+
+          else # Last slide, go to beginning
             if direction is 'next'
               $currentSlide = $images.first()
               slideIndex = 1
             else
               $currentSlide = $images.last()
               slideIndex = $images.length
-            $counter.html(slideIndex)
-            history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState?
-            $currentSlide.fadeIn ->
-              transitioning = false
+          $counter.html(slideIndex)
+          history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState?
+          $currentSlide.fadeIn ->
+            transitioning = false
+            $lightbox.attr('href', "/add/#{$('#slides > img:visible').attr('data-id')}")
 
     # Set up DOM elements
     $next.click ->
@@ -50,7 +49,7 @@
       transition 'prev'
 
     $counter.html(slideIndex)
-
+    $lightbox.attr('href', "/add/#{$('#slides > img:visible').attr('data-id')}")
 
 )(jQuery)
 

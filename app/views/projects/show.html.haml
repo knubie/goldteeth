@@ -17,12 +17,13 @@
       %a(href="/")
         = image_tag "twitter.gif"
         tweet
-      %a(href="/")
+      = link_to "/", :id => "lightbox", :remote => true do
         = image_tag "add_to_lightbox.gif", :style => "margin-bottom: -2px;"
         add to portfolio
   #slides
     - @project.slides.each do |slide|
-      = image_tag slide.image.url
+      %img{:src => slide.image.url, :data => {:id => slide.id}}
+      / = image_tag slide.image.url
   #subtext
     - if @project.client
       #client= @project.client

@@ -1,0 +1,23 @@
+= stylesheet_link_tag "pdf"
+#pdf
+  .page.cover
+    = image_tag "logo_print_big.gif"
+    .date
+      Lightbox – 
+      = Time.now.strftime("%m.%e.%Y")
+  - session[:slides].each do |slide|
+    .page
+      = image_tag "logo_print.gif"
+      .line
+      = image_tag Slide.find(slide).image.url
+      .caption
+        = Slide.find(slide).project.artist.name
+        .slash &nbsp;/&nbsp;
+        .second= Slide.find(slide).project.title
+      .footer
+        10 East 23rd Street, 5th Floor, New York, NY 10010
+        %br
+        (646) 405-1256 office  /  (646) 405-1252 mobile
+        %br
+        info@goldteethandco.com
+
