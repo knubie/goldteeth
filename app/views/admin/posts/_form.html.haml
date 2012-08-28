@@ -1,5 +1,6 @@
 = semantic_nested_form_for [:admin, @post], :html => { :multipart => true } do |f|
   = f.inputs do
+    = f.input :created_at, :as => :date_select
     = f.input :artist
     = f.input :client
     = f.input :body, :input_html => { :class => 'wysiwyg' }
