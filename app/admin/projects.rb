@@ -9,6 +9,7 @@ ActiveAdmin.register Project do
 
   index do
     selectable_column
+    column :artist
     column :client
     column :title
     column "Thumb" do |project|

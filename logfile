@@ -32,3 +32,11 @@ LOG:  database system is shut down
 LOG:  database system was shut down at 2012-08-24 19:36:09 EDT
 LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
+ERROR:  column projects.conditions does not exist at character 44
+STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."conditions" IN ('title LIKE ?', 'T Magazine')
+ERROR:  column projects.conditions does not exist at character 45
+STATEMENT:  SELECT  "projects".* FROM "projects"  WHERE "projects"."conditions" IN ('title LIKE ?', 'T Magazine') LIMIT 1
+ERROR:  column projects.conditions does not exist at character 44
+STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."conditions" IN ('title LIKE ?', 'T Magazine')
+ERROR:  syntax error at or near ")" at character 64
+STATEMENT:  SELECT "projects".* FROM "projects"  WHERE ('t magazine' LIKE ?)

@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Goldteeth
+    %title Goldteeth & Co.
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -22,8 +22,4 @@
           = if @page != "lightbox" then link_to "lightbox", root_path else "lightbox" end
       = yield
       #footer
-        10 East 23rd Street, 5th Floor, New York, NY 10010
-        %br
-        (646) 405-1256 office  /  (646) 405-1252 mobile
-        %br
-        = link_to "info@goldteethandco.com", "mailto:info@goldteethandco.com"
+        = Information.first.contact.html_safe
