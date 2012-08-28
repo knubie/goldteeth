@@ -1,6 +1,5 @@
 #content-container
   - @artists.each do |artist|
-    = link_to "/#{artist.name.downcase.gsub(" ", "-")}" do
-      .artist
-        = image_tag artist.image.url
-        = artist.name
+    = link_to "/#{artist.name.downcase.gsub(" ", "-")}", :class => "artist" do
+      = image_tag artist.image.url
+      = artist.name
