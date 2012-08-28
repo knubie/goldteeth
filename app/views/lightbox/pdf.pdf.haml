@@ -1,13 +1,13 @@
-= stylesheet_link_tag "pdf"
+= wicked_pdf_stylesheet_link_tag "pdf"
 #pdf
   .page.cover
-    = image_tag "logo_print_big.gif"
+    = wicked_pdf_image_tag "logo_print_big.gif"
     .date
-      Lightbox – 
+      Lightbox &ndash; 
       = Time.now.strftime("%m.%e.%Y")
   - session[:slides].each do |slide|
     .page
-      = image_tag "logo_print.gif"
+      = wicked_pdf_image_tag "logo_print.gif"
       .line
       = image_tag Slide.find(slide).image.url
       .caption

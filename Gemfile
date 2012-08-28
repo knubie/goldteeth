@@ -16,6 +16,8 @@ gem "fog", "~> 1.3.1"
 gem 'haml-rails'
 gem 'twitter'
 gem 'acts_as_list'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-heroku'
 
 # Gems used only for assets and not required in production environments by default.
 group :assets do

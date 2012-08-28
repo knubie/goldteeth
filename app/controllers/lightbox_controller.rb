@@ -23,10 +23,26 @@ class LightboxController < ApplicationController
   end
 
   def pdf
+
     if session[:slides].empty?
       redirect_to :root
     end
-    render :layout => false
+
+    respond_to do |format|
+      format.html { render :layout => false }
+      format.pdf do
+        render  :pdf => "goldteethandco",
+                :page_size => "Letter",
+                :dpi => "120",
+                :margin => {
+                  :top => "0",
+                  :right => "0",
+                  :bottom => "0",
+                  :left => "0"
+                }
+      end
+    end
+
   end
 
 end
