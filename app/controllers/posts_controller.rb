@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @page = 'news'
-    @posts = Post.all
+    @posts = Post.find(:all, :order => "created_at DESC")
   end
 
   def show
@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
   def grid
     @page = 'news'
-    @posts = Post.all
+    @posts = Post.find(:all, :order => "created_at DESC")
   end
 
 end
