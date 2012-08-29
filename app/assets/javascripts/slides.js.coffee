@@ -7,7 +7,11 @@
 
     # Default options
     settings = $.extend
+      next: $('#next')
+      prev: $('#prev')
+      counter: $('#counter')
       startingSlide: 1
+      history: true
     , options
 
     # Initial variables
@@ -40,7 +44,7 @@
               $currentSlide = $images.last()
               slideIndex = $images.length
           $counter.html(slideIndex)
-          history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState?
+          history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState? and options.history
           $currentSlide.fadeIn ->
             transitioning = false
             $lightbox.attr('href', "/add/#{$('#slides > img:visible').attr('data-id')}")
