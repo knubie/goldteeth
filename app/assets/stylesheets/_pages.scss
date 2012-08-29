@@ -270,8 +270,10 @@
     }
   }
   #news-grid {
+    z-index: -1;
     .project {
       margin-bottom: 50px;
+      margin-right: 0;
     }
   }
 }
