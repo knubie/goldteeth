@@ -1,6 +1,10 @@
 (($) ->
   jQuery.fn.slides = (options) ->
 
+    # In order to pass this to options hash
+    if typeof options is 'function'
+      options = options(this)
+
     # Default options
     settings = $.extend
       startingSlide: 1
@@ -12,9 +16,9 @@
     $images.not($currentSlide).hide()
     slideIndex = settings.startingSlide
 
-    $next = $(options.next)
-    $prev = $(options.prev)
-    $counter = $(options.counter)
+    $next = options.next
+    $prev = options.prev
+    $counter = options.counter
     $lightbox = $("#lightbox")
 
     transitioning = false
@@ -50,6 +54,8 @@
 
     $counter.html(slideIndex)
     $lightbox.attr('href', "/add/#{$('#slides > img:visible').attr('data-id')}")
+
+    return this # Maintain jQuery chainability
 
 )(jQuery)
 

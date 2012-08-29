@@ -18,5 +18,5 @@
 //= require jquery.imagesloaded.min
 //= require jquery.masonry.min
 //= require slides
-//= require pages
 //= require projects
+//= require news

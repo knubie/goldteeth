@@ -9,11 +9,20 @@
   #news
     - @posts.each do |post|
       .post
-        - post.post_images.each do |post_image|
-          - if post.post_images.length > 1
-            .slides
+        - if post.post_images.length > 1
+          .controls
+            %span.current-slide= ''
+            \/
+            %span.total-slides= "#{post.post_images.length}"
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            = link_to 'prev', 'javascript:void(0);', :class => 'prev'
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            = link_to 'next', 'javascript:void(0);', :class => 'next'
+          .slides
+            - post.post_images.each do |post_image|
               = image_tag post_image.image.url, :class => 'slide'
-          - else
+        - else
+          - post.post_images.each do |post_image|
             = image_tag post_image.image.url, :class => 'slide'
         .date
           = post.created_at.getlocal.strftime("%b %e, %Y")

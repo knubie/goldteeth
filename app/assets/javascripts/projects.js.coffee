@@ -24,7 +24,7 @@ $ ->
     match && decodeURIComponent(match[1].replace(/\+/g, ' '))
 
   $('#slides').slides
-    next: '#next'
-    prev: '#prev'
-    counter: '#current-slide'
+    next: $('#next')
+    prev: $('#prev')
+    counter: $('#current-slide')
     startingSlide: if getParam('slide')? then getParam 'slide' else 1
