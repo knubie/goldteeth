@@ -248,6 +248,18 @@
         img { margin-right: 4px; }
       }
     }
+    .controls {
+      display: block;
+      font-size: 14px;
+      color: $g60;
+      margin-bottom: 22px;
+      a, .current-slide, .total-slides { color: $g20; }
+      .current-slide {
+        text-align: right;
+        width: 14px;
+        display: inline-block;
+      }
+    }
   }
   #news-grid {
     .project {
