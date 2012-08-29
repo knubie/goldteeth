@@ -2,7 +2,7 @@
   #breadcrumb
     = @artist.name
     .slash &nbsp;/&nbsp;
-    .second portfolio
+    .second Projects &amp; Portfolios
   .artist-section.portfolio
     - @artist.projects.each do |project|
       = link_to "/#{@artist.name.downcase.gsub(" ", "-")}/#{project.title.downcase.gsub(" ", "-")}" do
@@ -13,7 +13,7 @@
   - unless @recent_work.empty?
     .artist-section.recent-work
       .artist-heading
-        recent work
+        Recent Work
       - @recent_work.each do |post|
         = link_to "/news/#{post.id}" do
           .project
@@ -22,6 +22,6 @@
               = post.client
   .artist-section.bio
     .artist-heading
-      biography
+      Biography
     = @artist.bio.html_safe
     

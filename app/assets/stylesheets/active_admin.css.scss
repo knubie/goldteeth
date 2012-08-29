@@ -53,5 +53,15 @@ body.active_admin {
     color: #5E6469;
   }
 }
+#sortable-slides {
+  list-style: none;
+  li {
+    width: 200px;
+    height: 200px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}
 @import "active_admin/mixins";
 @import "active_admin/base";

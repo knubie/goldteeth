@@ -1,4 +1,4 @@
 %ul#sortable-slides
   - @slides.each do |slide|
     = content_tag_for :li, slide do
-      = image_tag slide.image.url, :style => 'height: 100px;'
+      = image_tag slide.image.url, :style => 'width: 200px;'

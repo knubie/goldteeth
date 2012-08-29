@@ -11,7 +11,6 @@ $(document).ready(function() {
     "image": false
   });
   $('#sortable-slides').sortable({
-    axis: 'y',
     update: function() {
       $.post("update_sort", $(this).sortable('serialize'))
     }
