@@ -28,7 +28,7 @@
     transition = (direction) ->
       unless transitioning
         transitioning = true
-        $currentSlide.fadeOut ->
+        $currentSlide.fadeOut -> #TODO: page jumps when image hides itself
           if direction is 'next' then $nextSlide = $currentSlide.next() else $nextSlide = $currentSlide.prev()
           if $nextSlide.length # If there's another slide
             $currentSlide = $nextSlide

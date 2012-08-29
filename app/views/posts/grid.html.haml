@@ -7,7 +7,9 @@
         view as list
   #news-grid
     - @posts.each do |post|
-      .project
+      = link_to "/news/#{post.id}", :class => "project" do
         = image_tag post.thumb.url
         .caption
-          = post.client
+          .artist-name= post.artist.name
+          .slash= "/"
+          .client= post.client
