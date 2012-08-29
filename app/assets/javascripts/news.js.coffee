@@ -1,6 +1,7 @@
 $ ->
-  $('.slides').slides (that) ->
-    next: that.prev().find('.next')
-    prev: that.prev().find('.prev')
-    counter: that.prev().find('.current-slide')
-    history: false
+  $.each $('.slides'), ->
+    $(this).slides
+      next: $(this).prev().find('.next')
+      prev: $(this).prev().find('.prev')
+      counter: $(this).prev().find('.current-slide')
+      history: false

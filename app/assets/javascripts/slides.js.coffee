@@ -1,10 +1,6 @@
 (($) ->
   jQuery.fn.slides = (options) ->
 
-    # In order to pass this to options hash
-    if typeof options is 'function'
-      options = options(this)
-
     # Default options
     settings = $.extend
       next: $('#next')
@@ -13,6 +9,8 @@
       startingSlide: 1
       history: true
     , options
+
+    console.log this
 
     # Initial variables
     $images = this.children()
@@ -31,11 +29,10 @@
       unless transitioning
         transitioning = true
         $currentSlide.fadeOut ->
-          if direction is 'next' then $next = $currentSlide.next() else $next = $currentSlide.prev()
-          if $next.length # If there's another slide
-            $currentSlide = $next
+          if direction is 'next' then $nextSlide = $currentSlide.next() else $nextSlide = $currentSlide.prev()
+          if $nextSlide.length # If there's another slide
+            $currentSlide = $nextSlide
             if direction is 'next' then slideIndex++ else slideIndex--
-
           else # Last slide, go to beginning
             if direction is 'next'
               $currentSlide = $images.first()
