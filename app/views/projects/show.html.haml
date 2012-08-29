@@ -21,7 +21,7 @@
         = image_tag "add_to_lightbox.gif", :style => "margin-bottom: -2px;"
         add to portfolio
   #slides
-    - @project.slides.each do |slide|
+    - @slides.each do |slide|
       %img{:src => slide.image.url, :data => {:id => slide.id}}
       / = image_tag slide.image.url
   #subtext

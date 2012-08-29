@@ -8,33 +8,4 @@
 
   #news
     - @posts.each do |post|
-      .post
-        - if post.post_images.length > 1
-          .controls
-            %span.current-slide= ''
-            \/
-            %span.total-slides= "#{post.post_images.length}"
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            = link_to 'prev', 'javascript:void(0);', :class => 'prev'
-            &nbsp;&nbsp;|&nbsp;&nbsp;
-            = link_to 'next', 'javascript:void(0);', :class => 'next'
-          .slides
-            - post.post_images.each do |post_image|
-              = image_tag post_image.image.url, :class => 'slide'
-        - else
-          - post.post_images.each do |post_image|
-            = image_tag post_image.image.url, :class => 'slide'
-        .date
-          = post.created_at.getlocal.strftime("%b %e, %Y")
-        .body
-          = post.body.html_safe
-        .social
-          %a(href="/")
-            = image_tag "facebook.gif"
-            share
-          %a(href="/")
-            = image_tag "twitter.gif"
-            tweet
-          = link_to "news/#{post.id}" do
-            = image_tag "link.gif"
-            link
+      = render post
