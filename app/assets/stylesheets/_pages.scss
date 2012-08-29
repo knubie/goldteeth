@@ -12,6 +12,7 @@
     vertical-align: baseline;
     position: absolute;
     top: 0;
+    z-index: 2;
     img {
       display: inline-block;
       position: absolute;
@@ -270,7 +271,6 @@
     }
   }
   #news-grid {
-    z-index: -1;
     .project {
       margin-bottom: 50px;
       margin-right: 0;
