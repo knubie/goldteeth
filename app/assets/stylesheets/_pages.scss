@@ -236,6 +236,14 @@
     .body {
       font-size: 14px;
       line-height: 22px;
+      a:link, a:visited {
+        color: $g60;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: $g60;
+        text-decoration: none;
+      }
     }
     .social {
       font-size: 11px;
