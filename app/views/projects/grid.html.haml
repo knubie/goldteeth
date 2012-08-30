@@ -1,5 +1,5 @@
 #content-container
   = render "breadcrumb"
   #grid
-    - @project.slides.each do |slide|
-      = image_tag slide.image.thumb.url
+    - @slides.each do |slide|
+      = link_to image_tag(slide.image.thumb.url), "/#{@project.artist.name.downcase.gsub(" ", "-")}/#{@project.title.downcase.gsub(" ", "-")}?slide=#{slide.position}"

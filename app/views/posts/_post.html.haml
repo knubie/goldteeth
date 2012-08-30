@@ -16,6 +16,7 @@
       = image_tag post_image.image.url, :class => 'slide'
   .date
     = post.created_at.getlocal.strftime("%b %e, %Y")
+    // TODO: remove date if show action
   .body
     = post.body.html_safe
   .social
@@ -28,3 +29,4 @@
     = link_to "news/#{post.id}" do
       = image_tag "link.gif"
       link
+      // TODO: remove link if show action
