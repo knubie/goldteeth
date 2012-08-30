@@ -10,18 +10,23 @@ Goldteeth::Application.routes.draw do
 
   root :to => "artists#index"
   #get "admin/projects/:id/sort" => "projects#sort"
-  post "admin/projects/:id/update_sort" => "projects#update_sort"
-  get "news" => "posts#index"
-  get "news/grid" => "posts#grid"
-  get "news/:id" => "posts#show"
-  get "information" => "information#show"
-  get "add/:slide" => "lightbox#add"
-  get "remove/:slide" => "lightbox#remove"
-  get "lightbox" => "lightbox#pdf"
-  get "clear" => "lightbox#clear"
-  get ":name" => "artists#show"
-  get ":name/:title/grid" => "projects#grid"
-  get ":name/:title" => "projects#show"
+  post "admin/projects/:id/update_sort"   => "projects#update_sort"
+
+  get "news"              => "posts#index",      :as => "posts"
+  get "news/grid"         => "posts#grid",       :as => "posts_grid"
+  get "news/:id"          => "posts#show",       :as => "post"
+
+  get "information"       => "information#show", :as => "information"
+
+  get "add/:slide"        => "lightbox#add",     :as => "lightbox_add"
+  get "remove/:slide"     => "lightbox#remove",  :as => "lightbox_remove"
+  get "clear"             => "lightbox#clear",   :as => "lightbox_clear"
+  get "lightbox"          => "lightbox#pdf",     :as => "lightbox_pdf"
+
+  get ":name"             => "artists#show",     :as => "artist"
+
+  get ":name/:title/grid" => "projects#grid",    :as => "projects_grid"
+  get ":name/:title"      => "projects#show",    :as => "project"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -2,12 +2,12 @@
   #breadcrumb
     News
     #view-as-grid
-      = link_to '/news' do
+      = link_to posts_path do
         = image_tag("list.gif")
         view as list
   #news-grid
     - @posts.each do |post|
-      = link_to "/news/#{post.id}", :class => "project" do
+      = link_to post_path(post.id), :class => "project" do
         = image_tag post.thumb.url
         .caption
           .artist-name= post.artist.name

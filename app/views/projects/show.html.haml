@@ -2,7 +2,7 @@
   = render "breadcrumb"
   #controls
     #left
-      = link_to image_tag("grid.gif"), "#{request.fullpath}/grid"
+      = link_to image_tag("grid.gif"), projects_grid_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))
       %span#current-slide= ''
       \/
       %span#total-slides= "#{@project.slides.length}"
@@ -17,9 +17,9 @@
       %a(href="/")
         = image_tag "twitter.gif"
         tweet
-      = link_to "/", :id => "lightbox", :remote => true do
+      = link_to "", :id => "lightbox", :remote => true do
         = image_tag "add_to_lightbox.gif", :style => "margin-bottom: -2px;"
-        add to portfolio
+        add to lightbox
   #slides
     - @slides.each do |slide|
       - if slide.video.present?

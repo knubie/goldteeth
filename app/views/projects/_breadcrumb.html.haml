@@ -1,4 +1,4 @@
 #breadcrumb
-  = link_to @artist.name, "/#{@artist.name.downcase.gsub(" ", "-")}"
+  = link_to @artist.name, artist_path(@artist.name.downcase.gsub(" ", "-"))
   .slash &nbsp;/&nbsp;
   .second= @project.title

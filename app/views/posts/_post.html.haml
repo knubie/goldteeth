@@ -26,7 +26,7 @@
     %a(href="/")
       = image_tag "twitter.gif"
       tweet
-    = link_to "news/#{post.id}" do
+    = link_to post_path(post.id) do
       = image_tag "link.gif"
       link
       // TODO: remove link if show action

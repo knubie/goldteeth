@@ -1,6 +1,6 @@
 #content-container
   #breadcrumb
-    = link_to "News", "/news"
+    = link_to "News", posts_path
     .slash &nbsp;/&nbsp;
     .second
       = @post.created_at.getlocal.strftime("%b %e, %Y")
