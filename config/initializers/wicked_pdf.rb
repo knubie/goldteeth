@@ -1,4 +1,4 @@
-WickedPdf.config = { :exe_path => '/usr/local/bin/wkhtmltopdf' }
+#WickedPdf.config = { :exe_path => '/usr/local/bin/wkhtmltopdf' }
 
 module WickedPdfHelper
   def wicked_pdf_stylesheet_link_tag(*sources)
