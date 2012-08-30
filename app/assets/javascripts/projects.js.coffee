@@ -23,3 +23,4 @@ $ ->
     prev: $('#prev')
     counter: $('#current-slide')
     startingSlide: if getParam('slide')? then getParam 'slide' else 1
+    history: true
