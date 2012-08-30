@@ -15,4 +15,11 @@ class PostsController < ApplicationController
     @posts = Post.find(:all, :order => "created_at DESC")
   end
 
+  def update_sort
+    params[:post_image].each_with_index do |id, index|
+      PostImage.update_all({position: index+1}, {id: id})
+    end
+    render :nothing => true
+  end
+
 end

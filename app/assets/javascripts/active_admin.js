@@ -12,7 +12,7 @@ $(document).ready(function() {
   });
   $('#sortable-slides').sortable({
     update: function() {
-      $.post("update_sort", $(this).sortable('serialize'))
+      $.post($(this).data('update_url'), $(this).sortable('serialize'))
     }
   });
 

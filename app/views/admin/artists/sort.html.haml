@@ -1,0 +1,5 @@
+%ul#sortable-slides{:data => {:update_url => sort_artists_url}}
+  - @artists.each do |artist|
+    = content_tag_for :li, artist do
+      = image_tag artist.image.url, :style => 'width: 200px;'
+      = artist.name

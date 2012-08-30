@@ -2,7 +2,7 @@
   = render "breadcrumb"
   #controls
     #left
-      = link_to image_tag("grid.gif"), projects_grid_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))
+      = link_to image_tag("grid.gif"), projects_grid_path(@artist.url_name, @project.url_title)
       %span#current-slide= ''
       \/
       %span#total-slides= "#{@project.slides.length}"

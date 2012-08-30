@@ -1,0 +1,4 @@
+%ul#sortable-slides{:data => {:update_url => sort_post_images_url(@post.id)}}
+  - @post_images.each do |post_image|
+    = content_tag_for :li, post_image do
+      = image_tag post_image.image.url, :style => 'width: 200px;'

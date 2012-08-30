@@ -2,6 +2,11 @@ ActiveAdmin.register Post do
 
   menu :label => "News", :priority => 2
 
+  member_action :sort do
+    @post = Post.find params[:id]
+    @post_images = @post.post_images.order 'position'
+  end
+
   index do
     selectable_column
     column :client
@@ -9,7 +14,15 @@ ActiveAdmin.register Post do
       image_tag post.thumb.url, :width => 100
     end
     column :created_at
-    default_actions
+    column "" do |post|
+      links = link_to "View", admin_post_path(post)
+      links += ' '
+      links += link_to "Edit", edit_admin_post_path(post)
+      links += ' '
+      links += link_to "Delete", admin_post_path(post), :method => :delete
+      links += ' '
+      links += link_to "Sort", sort_admin_post_path(post)
+    end
   end
 
   filter :artist

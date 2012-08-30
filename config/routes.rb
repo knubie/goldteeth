@@ -1,7 +1,5 @@
 Goldteeth::Application.routes.draw do
 
-  get "artists/show"
-
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -10,7 +8,9 @@ Goldteeth::Application.routes.draw do
 
   root :to => "artists#index"
   #get "admin/projects/:id/sort" => "projects#sort"
-  post "admin/projects/:id/update_sort"   => "projects#update_sort"
+  post "admin/projects/:id/update_sort"   => "projects#update_sort", :as => "sort_slides"
+  post "admin/post/:id/update_sort"   => "posts#update_sort", :as => "sort_post_images"
+  post "admin/artists/update_sort"   => "artists#update_sort", :as => "sort_artists"
 
   get "news"              => "posts#index",      :as => "posts"
   get "news/grid"         => "posts#grid",       :as => "posts_grid"
