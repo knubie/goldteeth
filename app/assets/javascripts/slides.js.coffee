@@ -29,10 +29,21 @@
       unless transitioning
         transitioning = true
         $currentSlide.fadeOut -> #TODO: page jumps when image hides itself
+
+          # Reset vimdeo if it's a video
+          if $currentSlide.is('iframe')
+            src = $currentSlide.attr('src')
+            $currentSlide.attr('src', '')
+            $currentSlide.attr('src', src)
+
+          # Check direction
           if direction is 'next' then $nextSlide = $currentSlide.next() else $nextSlide = $currentSlide.prev()
-          if $nextSlide.length # If there's another slide
+
+          # If there's another slide
+          if $nextSlide.length
             $currentSlide = $nextSlide
             if direction is 'next' then slideIndex++ else slideIndex--
+
           else # Last slide, go to beginning
             if direction is 'next'
               $currentSlide = $images.first()

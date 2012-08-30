@@ -7,10 +7,13 @@
     = f.input :image
   = f.fields_for :slides do |b|
     = f.inputs do
-      = b.input :image, :as => :file, :label => false
-      = f.input :client, :label =>  false, :input_html => {:placeholder => "Client.."}
+      = b.input :image, :as => :file
+      = b.input :video, :input_html => { :placeholder => 'vimeo video id e.g. http://vimeo.com/_41363350_' }
+      = f.input :client
       - unless b.object.image.url.blank?
         = image_tag b.object.image.thumb.url, :style => "padding: 10px; display: block;"
+      - unless b.object.video.blank?
+        = "<iframe src='http://player.vimeo.com/video/#{b.object.video}?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff' width='215' height='121' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><br/>".html_safe
       = b.link_to_remove "Remove slide"
   = f.link_to_add "Add a slide", :slides
   = f.actions
