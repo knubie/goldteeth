@@ -65,7 +65,7 @@
       transition 'prev'
 
     $counter.html(slideIndex)
-    $lightbox.attr('href', "/add/#{$('#slides > img:visible').attr('data-id')}")
+    $lightbox.attr('href', "/add/#{$('#slides > img:visible').attr('data-id')}") # FIXME: shows up as undefined
 
     return this # Maintain jQuery chainability
 
