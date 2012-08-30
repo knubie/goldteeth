@@ -39,7 +39,8 @@ class LightboxController < ApplicationController
                   :right => "0",
                   :bottom => "0",
                   :left => "0"
-                }
+                },
+                :show_as_html => params[:debug]
       end
     end
 
