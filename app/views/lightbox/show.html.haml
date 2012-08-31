@@ -1,0 +1,16 @@
+#content-container
+  #breadcrumb
+    Lightbox
+    #view-as-grid
+      = link_to posts_path do
+        = image_tag("list.gif")
+        download PDF
+  #news-grid
+    - if @slides.empty?
+      Your lightbox is empty. Add slides to it from artists' projects with the "ADD TO LIGHTBOX" button.
+    - @slides.each do |slide|
+      = image_tag slide.image.url
+      .caption
+        .artist-name= slide.project.artist.name
+        .slash= "/"
+        .client= slide.project.title

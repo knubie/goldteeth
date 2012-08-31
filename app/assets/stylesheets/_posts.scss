@@ -1,0 +1,77 @@
+#content-container {
+  #view-as-grid {
+    margin-left: 22px;
+    font-size: 11px;
+    color: $g40;
+    text-transform: uppercase;
+    img { margin: 0 5px -1px 0; }
+  }
+  .post {
+    margin-bottom: 65px;
+    border-bottom: 1px solid $g90;
+    color: $g20;
+    .slide { margin-bottom: 30px; }
+    .date {
+      line-height: 24px;
+      font-size: 18px;
+    }
+    .body {
+      font-size: 14px;
+      line-height: 22px;
+      a:link, a:visited {
+        color: $g60;
+        text-decoration: underline;
+      }
+      a:hover {
+        color: $g60;
+        text-decoration: none;
+      }
+    }
+    .social {
+      font-size: 11px;
+      color: $g40;
+      text-transform: uppercase;
+      margin: 20px 0;
+      a {
+        color: $g40;
+        margin-right: 17px;
+        img { margin-right: 4px; }
+      }
+    }
+    .controls {
+      display: block;
+      font-size: 14px;
+      color: $g60;
+      margin-bottom: 22px;
+      a, .current-slide, .total-slides { color: $g20; }
+      .current-slide {
+        text-align: right;
+        width: 14px;
+        display: inline-block;
+      }
+    }
+  }
+  #news-grid {
+    .project {
+      margin-bottom: 30px;
+      margin-right: 0;
+      .caption {
+        .artist-name {
+          font-size: 16px;
+          color: $g20;
+          display: inline;
+        }
+        .slash {
+          font-size: 12px;
+          color: $g60;
+          display: inline;
+        }
+        .client {
+          font-size: 12px;
+          color: $g40;
+          display: inline;
+        }
+      }
+    }
+  }
+}

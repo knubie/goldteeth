@@ -5,7 +5,6 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  /%body.holmes-debug
   %body
     %p.notice= notice
     %p.alert= alert
@@ -19,7 +18,7 @@
           .slash &nbsp;/&nbsp;
           = if @page != "info" then link_to "information", information_path else "information" end
           .slash &nbsp;/&nbsp;
-          = if @page != "lightbox" then link_to "lightbox", root_path else "lightbox" end
+          = if @page != "lightbox" then link_to "lightbox", lightbox_path else "lightbox" end
       = yield
       #footer
         = Information.first.contact.html_safe

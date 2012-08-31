@@ -1,0 +1,58 @@
+#content-container {
+  margin-top: 110px;
+  text-align: left;
+  .artist {
+    font-size: 16px;
+    color: $g20;
+    display: inline-block;
+    margin-bottom: 43px;
+    img {
+      display: block;
+      margin-bottom: 8px;
+    }
+  }
+  .artist:nth-child(3n+1) { margin-right: 39px; }
+  .artist:nth-child(3n+3) { margin-left: 39px; }
+  #breadcrumb {
+    font-size: 24px;
+    letter-spacing: -0.5px;
+    margin-bottom: 30px;
+    color: $g40;
+    div { display: inline }
+    .slash { color: $g80; }
+    .second { color: $g60; }
+    a { color: $g40; }
+    a:hover { color: $g20; }
+  }
+  .artist-section { margin-bottom: 50px; }
+  .artist-heading {
+    font-size: 24px;
+    color: $g60;
+    letter-spacing: -0.5px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    border-top: 1px solid $g90;
+  }
+  .project {
+    margin-right: 8px;
+    width: 216px;
+    display: inline-block;
+    margin-bottom: 38px;
+    img { width: 216px; }
+    .caption {
+      margin-top: 18px;
+      border-top: 1px solid $g90;
+      padding-top: 6px;
+      color: $g20;
+      font-size: 16px;
+    }
+  }
+  .project:nth-child(4n+4) { margin: 0; }
+  .bio {
+    font-size: 14px;
+    color: $g40;
+    line-height: 20px;
+    width: 500px;
+    a:link, a:visited { color: $g60; }
+  }
+}

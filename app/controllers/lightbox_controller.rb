@@ -1,5 +1,13 @@
 class LightboxController < ApplicationController
 
+  def show
+    @page = 'lightbox'
+    @slides = []
+    session[:slides].each do |slide|
+      @slides.push Slide.find(slide)
+    end
+  end
+
   def add
     session[:slides] = [] if session[:slides].nil?
     session[:slides].push params[:slide] unless session[:slides].include? params[:slide]
@@ -29,7 +37,6 @@ class LightboxController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { render :layout => false }
       format.pdf do
         render  :pdf => "goldteethandco",
                 :page_size => "Letter",

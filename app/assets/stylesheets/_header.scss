@@ -1,0 +1,49 @@
+#container {
+  width: 900px;
+  margin: 0 auto;
+  #header {
+    width: 900px;
+    height: 80px;
+    border-bottom: 1px solid $g90;
+    background-color: white;
+    margin-bottom: 12px;
+    vertical-align: baseline;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    img {
+      display: inline-block;
+      position: absolute;
+      bottom: 12px;
+      left: 0px;
+    }
+    #nav {
+      display: inline-block;
+      position: absolute;
+      bottom: 12px;
+      right: 0px;
+      color: $g20;
+      text-transform: uppercase;
+      font-size: 12px;
+      cursor: default;
+      .slash {
+        color: $g80;
+        display: inline;
+      }
+      a:link, a:visited {
+        color: $g50;
+        text-decoration: none;
+      }
+      a:hover {
+        color: $g20;
+      }
+    }
+  }
+  #footer {
+    width: 900px;
+    border-top: 1px solid $g90;
+    font-size: 12px;
+    text-align: left;
+    padding-top: 20px;
+  }
+}

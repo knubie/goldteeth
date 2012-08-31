@@ -1,0 +1,48 @@
+#content-container {
+  #controls {
+    border-top: 1px solid $g90;
+    padding: 22px 0;
+    overflow: auto; // fixes issue where floated elements have 0 height
+  }
+  #left {
+    font-size: 14px;
+    float: left;
+    color: $g60;
+    a, #current-slide, #total-slides { color: $g20; }
+    #current-slide {
+      text-align: right;
+      width: 14px;
+      display: inline-block;
+    }
+    img {
+      display: inline;
+      margin-bottom: -2px;
+      margin-right: 9px;
+    }
+  }
+  #right {
+    float: right;
+    font-size: 11px;
+    color: $g40;
+    text-transform: uppercase;
+    a {
+      color: $g40;
+      margin-left: 17px;
+      img { margin-right: 4px; }
+    }
+  }
+  #slides {
+    clear: both;
+    text-align: center;
+  }
+  #subtext {
+    font-size: 14px;
+    line-height: 22px;
+    color: $g20;
+    margin-top: 25px;
+    margin-bottom: 100px;
+  }
+  #grid {
+    img { margin-bottom: 12px; }
+  }
+}
