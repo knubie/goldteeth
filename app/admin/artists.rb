@@ -2,8 +2,12 @@ ActiveAdmin.register Artist do
 
   menu :priority => 3
 
-  member_action :sort do
+  collection_action :sort do
     @artists = Artist.order 'position'
+  end
+
+  action_item do
+    link_to('Sort Artists', sort_admin_artists_path)
   end
 
   index do
