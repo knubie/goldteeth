@@ -33,14 +33,16 @@ class LightboxController < ApplicationController
       format.pdf do
         render  :pdf => "goldteethandco",
                 :page_size => "Letter",
-                :dpi => "120",
+                :dpi => 120,
                 :margin => {
                   :top => "0",
                   :right => "0",
                   :bottom => "0",
                   :left => "0"
                 },
-                :show_as_html => params[:debug]
+                :show_as_html => params[:debug],
+                :disable_smart_shrinking => true,
+                :print_media_type => true
       end
     end
 
