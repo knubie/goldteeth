@@ -1,5 +1,10 @@
 @import "cssreset";
 
+@font-face {
+  font-family: 'localGeorgia';
+  src: url('<%= "file://#{Rails.root.join('public', 'fonts', 'Georgia.ttf')}" %>');
+}
+
 // 120 DPI
 #pdf {
   .cover {
