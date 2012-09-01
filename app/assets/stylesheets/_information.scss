@@ -28,13 +28,13 @@
         color: $g60;
         text-decoration: underline;
       }
-      .tweet:nth-child(1) { padding-left: 0; }
-      .tweet:nth-child(4) { border: 0; }
       .ago {
         font-size: 10px;
         color: $g40;
         font-style: italic;
       }
     }
+    .tweet:nth-child(2) { padding-left: 0; padding-right: 10px; }
+    .tweet:last-child { border: 0; }
   }
 }
