@@ -10,7 +10,7 @@
     %p.alert= alert
     #container
       #header
-        = link_to image_tag("logo.gif"), root_path
+        = link_to image_tag("logo.gif", :alt => "Goldteeth & Co.", :id => "logo"), root_path
         #nav
           = if @page != "artists" then link_to "artists", root_path else "artists" end
           .slash &nbsp;/&nbsp;
@@ -18,7 +18,13 @@
           .slash &nbsp;/&nbsp;
           = if @page != "info" then link_to "information", information_path else "information" end
           .slash &nbsp;/&nbsp;
-          = if @page != "lightbox" then link_to "lightbox", lightbox_path else "lightbox" end
+          - if @page != "lightbox"
+            = link_to lightbox_path, :id => "lightbox-nav" do
+              = image_tag 'lightbox_up.gif', :id => "lightbox-nav-img"
+              lightbox
+          - else
+            = image_tag 'lightbox_down.gif', :id => "lightbox-nav-img"
+            lightbox
       = yield
       #footer
         = Information.first.contact.html_safe

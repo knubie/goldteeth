@@ -17,7 +17,8 @@ class LightboxController < ApplicationController
   end
 
   def remove
-    session[:slides].pop params[:slide] if session[:slides].include? params[:slide]
+    session[:slides].delete params[:slide] if session[:slides].include? params[:slide]
+    @slide = Slide.find params[:slide]
     respond_to do |format|
       format.js {render :layout => false}
     end

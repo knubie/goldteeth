@@ -2,15 +2,18 @@
   #breadcrumb
     Lightbox
     #view-as-grid
-      = link_to posts_path do
-        = image_tag("list.gif")
+      = link_to lightbox_pdf_path(:format => :pdf), :id => "download-pdf" do
+        = image_tag("download_up.gif")
         download PDF
-  #news-grid
+  #lightbox-grid
     - if @slides.empty?
       Your lightbox is empty. Add slides to it from artists' projects with the "ADD TO LIGHTBOX" button.
     - @slides.each do |slide|
-      = image_tag slide.image.url
-      .caption
-        .artist-name= slide.project.artist.name
-        .slash= "/"
-        .client= slide.project.title
+      .project.lightbox{:data => {:id => slide.id}}
+        = link_to lightbox_remove_path(slide.id), :class => 'close', :remote => true do
+          = image_tag 'close.gif'
+        = image_tag slide.image.url
+        .caption
+          .artist-name= slide.project.artist.name
+          .slash= "/"
+          .client= slide.project.title

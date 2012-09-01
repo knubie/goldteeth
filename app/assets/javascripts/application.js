@@ -20,3 +20,4 @@
 //= require slides
 //= require projects
 //= require news
+//= require lightbox

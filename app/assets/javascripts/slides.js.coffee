@@ -55,7 +55,7 @@
           history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState? and options.history
           $currentSlide.fadeIn ->
             transitioning = false
-            $lightbox.attr('href', "/add/#{$('#slides > img:visible').attr('data-id')}") if $lightbox.length
+            $lightbox.attr('href', "/lightbox/add/#{$('#slides > img:visible').attr('data-id')}") if $lightbox.length
 
     # Set up DOM elements
     $next.click ->

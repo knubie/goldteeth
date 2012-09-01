@@ -19,10 +19,10 @@ Goldteeth::Application.routes.draw do
   get "information"       => "information#show", :as => "information"
 
   get "lightbox"          => "lightbox#show",    :as => "lightbox"
-  get "add/:slide"        => "lightbox#add",     :as => "lightbox_add"
-  get "remove/:slide"     => "lightbox#remove",  :as => "lightbox_remove"
-  get "clear"             => "lightbox#clear",   :as => "lightbox_clear"
-  get "download"          => "lightbox#pdf",     :as => "lightbox_pdf"
+  get "lightbox/add/:slide"        => "lightbox#add",     :as => "lightbox_add"
+  get "lightbox/remove/:slide"     => "lightbox#remove",  :as => "lightbox_remove"
+  get "lightbox/clear"             => "lightbox#clear",   :as => "lightbox_clear"
+  get "lightbox/download"          => "lightbox#pdf",     :as => "lightbox_pdf"
 
   get ":name"             => "artists#show",     :as => "artist"
 
