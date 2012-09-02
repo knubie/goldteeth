@@ -11,7 +11,10 @@
         .ago
           = "#{time_ago_in_words tweet.created_at} ago"
         = tweet.text.gsub(/(http:\/\/\S*)/, '<a href="\1" target="_blank">\1</a>').html_safe
-    - Instagram.user_media_feed(:count => 4).data.each do |data|
-      = data.user.username
-      = data.created_time
-      = image_tag data.images.thumbnail.url
+  #instafeed
+    #instafeed-title instafeed
+    - Instagram.user_media_feed(:count => 10).data.each do |data|
+      .photo
+        = image_tag data.images.thumbnail.url
+        .username= data.user.username
+        .ago= "&ndash; #{time_ago_in_words DateTime.strptime("#{data.created_time}",'%s')} ago".gsub("about ", "").html_safe
