@@ -19,6 +19,7 @@ gem 'acts_as_list'
 gem 'wicked_pdf'
 #gem 'wkhtmltopdf-heroku'
 gem "wkhtmltopdf-binary"
+gem "instagram"
 
 # Gems used only for assets and not required in production environments by default.
 group :assets do
