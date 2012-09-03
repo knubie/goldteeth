@@ -22,10 +22,14 @@
         add to lightbox
   #slides
     - @slides.each do |slide|
-      - if slide.video.present?
-        %iframe(src="http://player.vimeo.com/video/#{slide.video}?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
-      - else
-        %img{:src => slide.image.url, :data => {:id => slide.id}}
+      .slide
+        - if slide.video.present?
+          %iframe(src="http://player.vimeo.com/video/#{slide.video}?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
+        - else
+          %img{:src => slide.image.url, :data => {:id => slide.id}}
+        - if slide.caption.present?
+          .caption
+            = slide.caption
   #subtext
     - if @project.client
       #client= @project.client

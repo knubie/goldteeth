@@ -34,6 +34,18 @@
   #slides {
     clear: both;
     text-align: center;
+    .slide {
+      .caption {
+        text-align: left;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 20px;
+        color: $g20;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $g90;
+      }
+    }
   }
   #subtext {
     font-size: 14px;

@@ -21,14 +21,14 @@
           - if @page != "lightbox"
             = link_to lightbox_path, :id => "lightbox-nav" do
               = image_tag 'lightbox_up.gif', :id => "lightbox-nav-img"
-              - if session[:slides].empty?
+              - unless session[:slides]
                 %span.count (0)
               - else
                 %span.count= "(#{session[:slides].length})"
               lightbox
           - else
             = image_tag 'lightbox_down.gif', :id => "lightbox-nav-img"
-            - if session[:slides].empty?
+            - unless session[:slides]
               %span.count (0)
             - else
               %span.count= "(#{session[:slides].length})"
