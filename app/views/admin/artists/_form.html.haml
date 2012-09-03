@@ -1,6 +1,12 @@
-= semantic_form_for [:admin, @artist] do |f|
+= semantic_nested_form_for [:admin, @artist], :html => { :multipart => true } do |f|
   = f.inputs do
     = f.input :name
     = f.input :bio, :input_html => { :class => 'wysiwyg' }
-    = f.input :image
+  = f.fields_for :artist_thumbs do |b|
+    = f.inputs do
+      = b.input :image, :as => :file
+      - unless b.object.image.url.blank?
+        = image_tag b.object.image.thumb.url, :style => "padding: 10px; display: block;"
+      = b.link_to_remove "Remove thumb"
+  = f.link_to_add "Add a thumbnail", :artist_thumbs
   = f.actions

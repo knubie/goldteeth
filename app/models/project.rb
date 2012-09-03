@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+
   belongs_to :artist
   has_many :slides
   attr_accessible :client, :subtitle, :title, :image, :artist_id, :slides_attributes
