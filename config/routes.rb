@@ -11,6 +11,7 @@ Goldteeth::Application.routes.draw do
   post "admin/projects/:id/update_sort"   => "projects#update_sort", :as => "sort_slides"
   post "admin/post/:id/update_sort"   => "posts#update_sort", :as => "sort_post_images"
   post "admin/artists/update_sort"   => "artists#update_sort", :as => "sort_artists"
+  post "admin/artists/update_sort_projects"   => "artists#update_sort_projects", :as => "sort_projects"
 
   get "news"              => "posts#index",      :as => "posts"
   get "news/grid"         => "posts#grid",       :as => "posts_grid"
