@@ -30,8 +30,8 @@
         transitioning = true
         $currentSlide.fadeOut -> #TODO: page jumps when image hides itself
 
-          # Reset vimdeo if it's a video
-          if $currentSlide.is('iframe')
+          # Reset vimeo if it's a video
+          if $currentSlide.children().first().is('iframe')
             src = $currentSlide.attr('src')
             $currentSlide.attr('src', '')
             $currentSlide.attr('src', src)
@@ -55,7 +55,7 @@
           history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState? and options.history
           $currentSlide.fadeIn ->
             transitioning = false
-            $lightbox.attr('href', "/lightbox/add/#{$('#slides > img:visible').attr('data-id')}") if $lightbox.length
+            $lightbox.attr('href', "/lightbox/add/#{$('#slides > .slide:visible > img').attr('data-id')}") if $lightbox.length
 
     # Set up DOM elements
     $next.click ->
@@ -65,7 +65,7 @@
       transition 'prev'
 
     $counter.html(slideIndex)
-    $lightbox.attr('href', "/lightbox/add/#{$images.eq(slideIndex-1).attr('data-id')}")
+    $lightbox.attr('href', "/lightbox/add/#{$images.eq(slideIndex-1).children().first().attr('data-id')}")
 
     return this # Maintain jQuery chainability
 

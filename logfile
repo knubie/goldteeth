@@ -1972,3 +1972,5 @@ STATEMENT:              SELECT a.attname, format_type(a.atttypid, a.atttypmod), 
 	               AND a.attnum > 0 AND NOT a.attisdropped
 	             ORDER BY a.attnum
 	
+ERROR:  cached plan must not change result type
+STATEMENT:  SELECT  "slides".* FROM "slides"  WHERE "slides"."id" = $1 LIMIT 1
