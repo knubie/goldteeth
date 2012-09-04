@@ -31,7 +31,6 @@ ActiveAdmin.register Artist do
       links += ' '
       links += link_to "Sort Projects", sort_projects_admin_artist_path(artist)
     end
-    default_actions
   end
   form :partial => 'form'
 end
