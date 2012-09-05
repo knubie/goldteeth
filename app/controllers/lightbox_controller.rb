@@ -3,8 +3,10 @@ class LightboxController < ApplicationController
   def show
     @page = 'lightbox'
     @slides = []
-    session[:slides].each do |slide|
-      @slides.push Slide.find(slide)
+    if session[:slides].present?
+      session[:slides].each do |slide|
+        @slides.push Slide.find(slide)
+      end
     end
   end
 
