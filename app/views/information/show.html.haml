@@ -5,7 +5,7 @@
     = Information.first.text.html_safe
   #twitter
     / TODO: authenticate against a user to prevent rate limiting
-    #twitter-name @goldteethandco
+    = link_to '@goldteethandco', 'https://twitter.com/goldteethandco', :id => 'twitter-name', :target => '_blank'
     - Twitter.user_timeline("goldteethandco", :count => 4).each do |tweet|
       .tweet
         .ago
