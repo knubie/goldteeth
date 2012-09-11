@@ -15,6 +15,6 @@
     #instafeed-title instafeed
     - Instagram.user_media_feed(:count => 10).data.each do |data|
       .photo
-        = image_tag data.images.thumbnail.url
+        = link_to image_tag(data.images.thumbnail.url), data.link, :target => "_blank"
         .username= data.user.username
         .ago= "&ndash; #{time_ago_in_words DateTime.strptime("#{data.created_time}",'%s')} ago".gsub("about ", "").html_safe
