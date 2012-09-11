@@ -7,10 +7,21 @@ class Project < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   acts_as_list
 
+  after_create :reset_slides_position
+
   # Virtual attributes
 
   def url_title
     title.downcase.gsub(" ", "-")
+  end
+
+  private
+
+  def reset_slides_position
+    slides = self.slides.order 'position'
+    slides.each_with_index do |slide, index|
+      slide.update_attribute :position, index+1
+    end
   end
 
 end
