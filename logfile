@@ -1996,3 +1996,9 @@ ERROR:  column "position" does not exist at character 80
 STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."artist_id" = 8 ORDER BY position
 ERROR:  column "position" does not exist at character 80
 STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."artist_id" = 8 ORDER BY position
+FATAL:  terminating connection due to administrator command
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+FATAL:  terminating connection due to administrator command
+LOG:  shutting down
+LOG:  database system is shut down
