@@ -4,7 +4,7 @@
     = wicked_pdf_image_tag "logo_print_big.gif"
     .date
       Lightbox &ndash; 
-      = Time.now.strftime("%m.%e.%Y")
+      = Time.now.strftime("%m/%e/%Y")
   - session[:slides].each do |slide|
     .page
       = wicked_pdf_image_tag "logo_print.gif"
