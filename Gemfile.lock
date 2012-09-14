@@ -292,6 +292,7 @@ DEPENDENCIES
   haml-rails
   instagram
   jquery-rails
+  kaminari
   nested_form!
   pg
   pry-rails

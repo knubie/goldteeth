@@ -20,6 +20,7 @@ gem 'wicked_pdf'
 #gem 'wkhtmltopdf-heroku'
 gem "wkhtmltopdf-binary"
 gem "instagram"
+gem 'kaminari'
 
 # Gems used only for assets and not required in production environments by default.
 group :assets do

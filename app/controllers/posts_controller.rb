@@ -2,7 +2,11 @@ class PostsController < ApplicationController
 
   def index
     @page = 'news'
-    @posts = Post.find(:all, :order => "created_at DESC")
+    @posts = Post.order("created_at DESC").page(params[:page]).per(15)
+    respond_to do |format|
+      format.js
+      format.html
+    end
   end
 
   def show
