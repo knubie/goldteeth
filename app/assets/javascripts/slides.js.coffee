@@ -31,10 +31,11 @@
         $currentSlide.fadeOut -> #TODO: page jumps when image hides itself
 
           # Reset vimeo if it's a video
+          console.log $currentSlide.children().first()
           if $currentSlide.children().first().is('iframe')
-            src = $currentSlide.attr('src')
-            $currentSlide.attr('src', '')
-            $currentSlide.attr('src', src)
+            src = $currentSlide.children().first().attr('src')
+            $currentSlide.children().first().attr('src', '')
+            $currentSlide.children().first().attr('src', src)
 
           # Check direction
           if direction is 'next' then $nextSlide = $currentSlide.next() else $nextSlide = $currentSlide.prev()
