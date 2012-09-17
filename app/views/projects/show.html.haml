@@ -11,10 +11,10 @@
       &nbsp;&nbsp;|&nbsp;&nbsp;
       = link_to 'next', 'javascript:void(0);', :id => 'next'
     #right
-      %a(href="/")
+      = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=Goldteeth%26Co&p[summary]=#{strip_tags @project.subtitle}&p[url]=#{request.protocol}#{request.host_with_port}#{request.fullpath}&p[images][0]=#{@project.slides.first.image.url}" do
         = image_tag "facebook.gif"
         share
-      %a(href="/")
+      = link_to "http://twitter.com/share?url=#{request.protocol}#{request.host_with_port}#{request.fullpath}" do
         = image_tag "twitter.gif"
         tweet
       = link_to "", :id => "lightbox", :remote => true do
