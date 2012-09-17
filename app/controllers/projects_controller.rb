@@ -1,14 +1,12 @@
 class ProjectsController < ApplicationController
 
   def show
-    @page = 'artists'
     @artist = Artist.find(:first, :conditions => [ "lower(name) = ?", params[:name].gsub('-', ' ').tr('_', ' ').gsub(/\s+/, ' ').gsub(/\b\w/){ $`[-1,1] == "'" ? $& : $&.upcase }.downcase ])
     @project = @artist.projects.find(:first, :conditions => [ "lower(title) = ?", params[:title].gsub('-', ' ').tr('_', ' ').gsub(/\s+/, ' ').gsub(/\b\w/){ $`[-1,1] == "'" ? $& : $&.upcase }.downcase ])
     @slides = @project.slides.order 'position'
   end
 
   def grid
-    @page = 'artists'
     @artist = Artist.find(:first, :conditions => [ "lower(name) = ?", params[:name].gsub('-', ' ').tr('_', ' ').gsub(/\s+/, ' ').gsub(/\b\w/){ $`[-1,1] == "'" ? $& : $&.upcase }.downcase ])
     @project = @artist.projects.find(:first, :conditions => [ "lower(title) = ?", params[:title].gsub('-', ' ').tr('_', ' ').gsub(/\s+/, ' ').gsub(/\b\w/){ $`[-1,1] == "'" ? $& : $&.upcase }.downcase ])
     @slides = @project.slides.order 'position'
