@@ -20,12 +20,17 @@
   .body
     = post.body.html_safe
   .social
-    %a(href="/")
+    = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=Goldteeth%26Co&p[summary]=#{strip_tags post.body}&p[url]=#{request.protocol}#{request.host_with_port}#{request.fullpath}&p[images][0]=#{post.post_images.first.image.url}" do
       = image_tag "facebook.gif"
       share
-    %a(href="/")
-      = image_tag "twitter.gif"
-      tweet
+    - if params[:action] == 'show'
+      = link_to "http://twitter.com/share?url=#{request.protocol}#{request.host_with_port}#{request.fullpath}" do
+        = image_tag "twitter.gif"
+        tweet
+    - else
+      = link_to "http://twitter.com/share?url=#{post_url(post.id)}" do
+        = image_tag "twitter.gif"
+        tweet
     - unless params[:action] == 'show'
       = link_to post_path(post.id) do
         = image_tag "link.gif"
