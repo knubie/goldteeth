@@ -1,7 +1,7 @@
 class Artist < ActiveRecord::Base
 
 
-  has_many :projects
+  has_many :projects, :order => 'position'
   has_many :artist_thumbs
   attr_accessible :bio, :name, :image, :artist_thumbs_attributes
   accepts_nested_attributes_for :artist_thumbs, :allow_destroy => true

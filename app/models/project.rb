@@ -1,13 +1,13 @@
 class Project < ActiveRecord::Base
 
   belongs_to :artist
-  has_many :slides
+  has_many :slides, :order => "position"
   attr_accessible :client, :subtitle, :title, :image, :artist_id, :slides_attributes
   accepts_nested_attributes_for :slides, :allow_destroy => true
   mount_uploader :image, ImageUploader
-  acts_as_list
+  acts_as_list :scope => :artist
 
-  after_create :reset_slides_position
+  #after_create :reset_slides_position
 
   # Virtual attributes
 
