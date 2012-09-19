@@ -20,7 +20,7 @@
   .body
     = post.body.html_safe
   .social
-    = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=#{post.artist.name}%20%2F%20#{post.client}&p[summary]=#{strip_tags post.body}&p[url]=#{request.protocol}#{request.host_with_port}#{request.fullpath}&p[images][0]=#{post.post_images.first.image.url}" do
+    = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=#{post.artist.name}%20%2F%20#{post.client}&p[summary]=#{strip_tags post.body}&p[url]=#{request.protocol}#{request.host_with_port}#{request.fullpath}&p[images][0]=#{post.post_images.first.image.url if post.post_images.present?}" do
       = image_tag "facebook.gif"
       share
     - if params[:action] == 'show'
