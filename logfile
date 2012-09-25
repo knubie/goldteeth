@@ -2101,3 +2101,12 @@ STATEMENT:              SELECT a.attname, format_type(a.atttypid, a.atttypmod), 
 	               AND a.attnum > 0 AND NOT a.attisdropped
 	             ORDER BY a.attnum
 	
+FATAL:  terminating connection due to administrator command
+LOG:  autovacuum launcher shutting down
+FATAL:  terminating connection due to administrator command
+LOG:  received smart shutdown request
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2012-09-24 16:29:07 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started

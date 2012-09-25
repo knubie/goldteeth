@@ -13,8 +13,9 @@
         = tweet.text.gsub(/(http:\/\/\S*)/, '<a href="\1" target="_blank">\1</a>').html_safe
   #instafeed
     #instafeed-title instafeed
-    - Instagram.user_media_feed(:count => 10).data.each do |data|
-      .photo
-        = link_to image_tag(data.images.thumbnail.url), data.link, :target => "_blank"
-        .username= data.user.username
-        .ago= "&ndash; #{time_ago_in_words DateTime.strptime("#{data.created_time}",'%s')} ago".gsub("about ", "").html_safe
+    - Instagram.user_media_feed(:count => 20).data.each_with_index do |data, i|
+      - unless i > 9
+        .photo
+          = link_to image_tag(data.images.thumbnail.url), data.link, :target => "_blank"
+          .username= data.user.username
+          .ago= "&ndash; #{time_ago_in_words DateTime.strptime("#{data.created_time}",'%s')} ago".gsub("about ", "").html_safe
