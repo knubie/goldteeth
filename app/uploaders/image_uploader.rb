@@ -20,8 +20,65 @@ class ImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def filename
+    @filename ||= "#{model.id.to_s}@2x.#{file.extension}" if original_filename
+  end
+
+  version :non_retina do
+    process :resize_to_half
+    def full_filename (for_file = file)
+      "#{model.id.to_s}.jpg"
+    end
+  end
+
   version :thumb do
-    process :resize_to_fit => [215, 1000]
+    process :resize_to_fit => [432, 2000]
+    def full_filename (for_file = file)
+      "#{model.id.to_s}-thumb@2x.jpg"
+    end
+  end
+
+  version :non_retina_thumb do
+    process :resize_to_fit => [216, 1000]
+    def full_filename (for_file = file)
+      "#{model.id.to_s}-thumb.jpg"
+    end
+  end
+
+  def resize_to_half
+    manipulate! do |img|
+      img.resize 0.5
+    end
+  end
+
+#  def get_dimensions
+#    if @file
+#      img = ::Magick::Image::read(@file.file).first
+#      @dimensions = [(img.columns/2), (img.rows/2)]
+#    end
+#    #manipulate! do |img|
+#    #  return [img.columns/2, img.rows/2]
+#    #end
+#  end
+
+#
+#  def get_width
+#    if @file
+#      img = ::Magick::Image::read(@file.file).first
+#      return img.columns/2
+#    end
+#  end
+#
+#  def get_height
+#    if @file
+#      img = ::Magick::Image::read(@file.file).first
+#      return img.rows/2
+#    end
+#  end
+  protected
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) or model.instance_variable_set(var, SecureRandom.uuid)
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

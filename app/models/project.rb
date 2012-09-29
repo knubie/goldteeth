@@ -8,6 +8,7 @@ class Project < ActiveRecord::Base
   acts_as_list :scope => :artist
 
   #after_create :reset_slides_position
+  #FIXME: reset slide order if deleting a slide
 
   # Virtual attributes
 

@@ -21,3 +21,8 @@
 //= require projects
 //= require news
 //= require lightbox
+//= require hisrc
+
+$(function() {
+  $('img').hisrc();
+});

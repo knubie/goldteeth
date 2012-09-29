@@ -21,6 +21,7 @@ gem 'wicked_pdf'
 gem "wkhtmltopdf-binary"
 gem "instagram"
 gem 'kaminari'
+gem 'hisrc-rails'
 
 # Gems used only for assets and not required in production environments by default.
 group :assets do

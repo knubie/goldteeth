@@ -2,5 +2,4 @@
   = render "breadcrumb"
   #grid
     - @slides.each do |slide|
-      /= link_to image_tag(slide.image.thumb.url), "/#{@project.artist.name.downcase.gsub(" ", "-")}/#{@project.title.downcase.gsub(" ", "-")}?slide=#{slide.position}"
-      = link_to image_tag(slide.image.thumb.url), project_path(@project.artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"), :slide => slide.position)
+      = link_to responsive_image_tag(slide.image.non_retina_thumb.url, :width => 216), project_path(@project.artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"), :slide => slide.position)
