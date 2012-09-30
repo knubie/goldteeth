@@ -21,26 +21,26 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    @filename ||= "#{model.id.to_s}@2x.#{file.extension}" if original_filename
+    "#{model.id.to_s}@2x.#{file.extension}" if original_filename
   end
 
   version :non_retina do
     process :resize_to_half
-    def full_filename (for_file = file)
+    def full_filename (for_file = model.image.file)
       "#{model.id.to_s}.jpg"
     end
   end
 
   version :thumb do
     process :resize_to_fit => [432, 2000]
-    def full_filename (for_file = file)
+    def full_filename (for_file = model.image.file)
       "#{model.id.to_s}-thumb@2x.jpg"
     end
   end
 
   version :non_retina_thumb do
     process :resize_to_fit => [216, 1000]
-    def full_filename (for_file = file)
+    def full_filename (for_file = model.image.file)
       "#{model.id.to_s}-thumb.jpg"
     end
   end

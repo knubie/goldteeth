@@ -7,7 +7,7 @@
     - @projects.each do |project|
       = link_to project_path(@artist.name.downcase.gsub(" ", "-"), project.title.downcase.gsub(" ", "-")) do
         .project
-          = image_tag project.image.url
+          = image_tag project.image.non_retina_thumb.url
           .caption
             = project.title
   - unless @recent_work.empty?
@@ -18,7 +18,7 @@
         /= link_to "/news/#{post.id}" do
         = link_to post_path(post.id) do
           .project
-            = image_tag post.thumb.url
+            = responsive_image_tag post.thumb.non_retina_thumb.url
             .caption
               = post.client
   .artist-section.bio
