@@ -33,5 +33,5 @@
         tweet
     - unless params[:action] == 'show'
       = link_to post_path(post.id) do
-        = image_tag "link.gif"
+        = responsive_image_tag "link.gif", :width => 13
         link
