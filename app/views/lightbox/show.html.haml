@@ -14,7 +14,7 @@
         .project.lightbox{:data => {:id => slide.id}}
           = link_to lightbox_remove_path(slide.id), :class => 'close', :remote => true do
             = image_tag 'close.gif'
-          = image_tag slide.image.url
+          = responsive_image_tag slide.image.non_retina_thumb.url
           .caption
             .artist-name= slide.project.artist.name
             .slash= "/"

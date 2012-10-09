@@ -13,7 +13,7 @@ ActiveAdmin.register Project do
     column :client
     column :title
     column "Thumb" do |project|
-      image_tag project.image.url, :width => 100
+      image_tag project.image.non_retina.url, :width => 100
     end
     column :created_at
     column "" do |project|

@@ -9,7 +9,7 @@
     .page
       = wicked_pdf_image_tag "logo_print.gif"
       .line
-      = image_tag Slide.find(slide).image.url
+      = image_tag Slide.find(slide).image.non_retina.url
       .caption
         = Slide.find(slide).project.artist.name
         .slash &nbsp;/&nbsp;
