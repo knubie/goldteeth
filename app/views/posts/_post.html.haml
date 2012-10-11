@@ -10,10 +10,10 @@
       = link_to 'next', 'javascript:void(0);', :class => 'next'
     .slides
       - post.post_images.each do |post_image|
-        = image_tag post_image.image.url, :class => 'slide'
+        = responsive_image_tag post_image.image.non_retina.url, :class => 'slide'
   - else
     - post.post_images.each do |post_image|
-      = image_tag post_image.image.url, :class => 'slide'
+      = responsive_image_tag post_image.image.non_retina.url, :class => 'slide'
   - unless params[:action] == 'show'
     .date
       = post.created_at.getlocal.strftime("%b %e, %Y")
