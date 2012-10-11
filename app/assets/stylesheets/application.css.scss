@@ -15,6 +15,7 @@ body {
 
 img {
   max-width: 900px; // TODO: maybe find better solution for retina image sizes.
+  max-height: 900px;
 }
 
 body { -webkit-font-smoothing: antialiased; }
