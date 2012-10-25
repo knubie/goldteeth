@@ -7,6 +7,7 @@ gem 'pry-rails', :group => :development
 gem 'rspec-rails', :group => [:test, :development]
 gem 'activeadmin', git: 'https://github.com/gregbell/active_admin.git'
 gem 'carrierwave'
+gem 'carrierwave_direct'
 gem 'bootstrap-wysihtml5-rails', "~> 0.3.0"
 gem 'jquery-rails'
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
