@@ -9,7 +9,7 @@
     = f.inputs do
       = b.input :image, :as => :file, :label => false
       - unless b.object.image.url.blank?
-        = image_tag b.object.image.thumb.url, :style => "padding: 10px; display: block;"
+        = responsive_image_tag b.object.image.non_retina_thumb.url, :style => "padding: 10px; display: block;"
       = b.link_to_remove "Remove slide"
   = f.link_to_add "Add an image", :post_images
   = f.actions

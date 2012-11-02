@@ -2118,3 +2118,17 @@ STATEMENT:              SELECT a.attname, format_type(a.atttypid, a.atttypmod), 
 	               AND a.attnum > 0 AND NOT a.attisdropped
 	             ORDER BY a.attnum
 	
+LOG:  database system was interrupted; last known up at 2012-10-09 17:09:16 EDT
+LOG:  database system was not properly shut down; automatic recovery in progress
+LOG:  record with zero length at 0/1DCED38
+LOG:  redo is not required
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2012-11-02 16:37:38 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
