@@ -8,8 +8,11 @@
   = f.fields_for :post_images do |b|
     = f.inputs do
       = b.input :image, :as => :file, :label => false
+      = b.input :video, :input_html => { :placeholder => 'vimeo video id e.g. http://vimeo.com/_41363350_' }
       - unless b.object.image.url.blank?
         = responsive_image_tag b.object.image.non_retina_thumb.url, :style => "padding: 10px; display: block;"
+      - unless b.object.video.blank?
+        = "<iframe src='http://player.vimeo.com/video/#{b.object.video}?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff' width='215' height='121' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe><br/>".html_safe
       = b.link_to_remove "Remove slide"
-  = f.link_to_add "Add an image", :post_images
+  = f.link_to_add "Add an image/video", :post_images
   = f.actions
