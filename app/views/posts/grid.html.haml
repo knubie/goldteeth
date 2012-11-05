@@ -8,7 +8,7 @@
   #news-grid
     - @posts.each do |post|
       = link_to post_path(post.id), :class => "project" do
-        = responsive_image_tag post.non_retina_thumb.url
+        = responsive_image_tag post.thumb.non_retina_thumb.url
         .caption
           .artist-name= post.artist.name
           .slash= "/"
