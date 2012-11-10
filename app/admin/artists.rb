@@ -19,7 +19,7 @@ ActiveAdmin.register Artist do
     selectable_column
     column :name
     column "Thumb" do |artist|
-      responsive_image_tag artist.image.non_retina_thumb.url, :width => 100
+      responsive_image_tag artist.artist_thumbs.first.image.non_retina_thumb.url, :width => 100
     end
     #links += link_to "Sort", sort_admin_artist_path(artist)
     column "" do |artist|
