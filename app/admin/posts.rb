@@ -11,7 +11,9 @@ ActiveAdmin.register Post do
     selectable_column
     column :client
     column "Thumb" do |post|
-      responsive_image_tag post.post_images.first.image.non_retina_thumb.url, :width => 100
+      if post.post_images.first.image.present?
+        responsive_image_tag post.post_images.first.image.non_retina_thumb.url, :width => 100
+      end
     end
     column :created_at
     column "" do |post|
