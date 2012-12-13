@@ -2146,3 +2146,11 @@ LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
 ERROR:  column "position" does not exist at character 80
 STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."artist_id" = 7 ORDER BY position
+ERROR:  relation "artist_thumbs" already exists
+STATEMENT:  CREATE TABLE "artist_thumbs" ("id" serial primary key, "image" character varying(255), "artist_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+ERROR:  database "goldteeth-dev" is being accessed by other users
+DETAIL:  There is 1 other session using the database.
+STATEMENT:  DROP DATABASE IF EXISTS "goldteeth-dev"
+FATAL:  database "goldteeth-test" does not exist
+ERROR:  relation "artist_thumbs" already exists
+STATEMENT:  CREATE TABLE "artist_thumbs" ("id" serial primary key, "image" character varying(255), "artist_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
