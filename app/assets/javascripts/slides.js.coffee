@@ -15,7 +15,15 @@
     # Initial variables
     $images = this.children()
     $currentSlide = this.children(":nth-child(#{settings.startingSlide})")
+    $pins = $('#pin-it').children()
+    $currentPin = $('#pin-it').children(":nth-child(#{settings.startingSlide})")
+    $pins.not($currentPin).hide()
     $images.not($currentSlide).hide()
+
+    $pins = $('#pin-it').children()
+    $currentPin = $('#pin-it').children(":nth-child(#{settings.startingSlide})")
+    $pins.not($currentPin).hide()
+
     slideIndex = settings.startingSlide
 
     $next = options.next
@@ -29,31 +37,40 @@
       unless transitioning
         transitioning = true
         $currentSlide.fadeOut -> #TODO: page jumps when image hides itself
+          $currentPin.hide()
 
           # Reset vimeo if it's a video
-          console.log $currentSlide.children().first()
           if $currentSlide.children().first().is('iframe')
             src = $currentSlide.children().first().attr('src')
             $currentSlide.children().first().attr('src', '')
             $currentSlide.children().first().attr('src', src)
 
           # Check direction
-          if direction is 'next' then $nextSlide = $currentSlide.next() else $nextSlide = $currentSlide.prev()
+          if direction is 'next'
+            $nextSlide = $currentSlide.next()
+            $nextPin = $currentPin.next()
+          else
+            $nextSlide = $currentSlide.prev()
+            $nextPin = $currentPin.prev()
 
           # If there's another slide
           if $nextSlide.length
             $currentSlide = $nextSlide
+            $currentPin = $nextPin
             if direction is 'next' then slideIndex++ else slideIndex--
 
           else # Last slide, go to beginning
             if direction is 'next'
               $currentSlide = $images.first()
+              $currentPin = $pins.first()
               slideIndex = 1
             else
               $currentSlide = $images.last()
+              $currentPin = $pins.last()
               slideIndex = $images.length
           $counter.html(slideIndex)
           history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState? and options.history
+          $currentPin.fadeIn()
           $currentSlide.fadeIn ->
             transitioning = false
             $lightbox.attr('href', "/lightbox/add/#{$('#slides > .slide:visible > img').attr('data-id')}") if $lightbox.length
