@@ -70,7 +70,7 @@
               slideIndex = $images.length
           $counter.html(slideIndex)
           history.replaceState({},'',"?slide=#{slideIndex}") if history.replaceState? and options.history
-          $currentPin.fadeIn()
+          $currentPin.show()
           $currentSlide.fadeIn ->
             transitioning = false
             $lightbox.attr('href', "/lightbox/add/#{$('#slides > .slide:visible > img').attr('data-id')}") if $lightbox.length

@@ -15,7 +15,6 @@ class PostsController < ApplicationController
   end
 
   def grid
-    @page = 'news'
     @posts = Post.find(:all, :order => "created_at DESC")
   end
 
