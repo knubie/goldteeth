@@ -26,7 +26,7 @@
   .body
     = post.body.html_safe
   .social
-    = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=#{post.artist.name if post.artist.name.present?}%20%2F%20#{post.client if post.client.present?}&p[summary]=#{strip_tags post.body}&p[url]=#{request.protocol}#{request.host_with_port}#{request.fullpath}&p[images][0]=#{post.post_images.first.image.url if post.post_images.present?}" do
+    = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=#{post.artist.name if post.artist.present?}%20%2F%20#{post.client if post.client.present?}&p[summary]=#{strip_tags post.body}&p[url]=#{request.protocol}#{request.host_with_port}#{request.fullpath}&p[images][0]=#{post.post_images.first.image.url if post.post_images.present?}" do
       = image_tag "facebook.gif"
       share
     - if params[:action] == 'show'
@@ -34,7 +34,7 @@
         = image_tag "twitter.gif"
         tweet
     - else
-      = link_to "http://twitter.com/share?url=#{post_url(post.id)}&text=#{post.artist.name}%20%2F%20#{post.client}" do
+      = link_to "http://twitter.com/share?url=#{post_url(post.id)}&text=#{post.artist.name if post.artist.present?}%20%2F%20#{post.client if post.client.present?}" do
         = image_tag "twitter.gif"
         tweet
     - unless params[:action] == 'show'
