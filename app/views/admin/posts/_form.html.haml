@@ -9,6 +9,7 @@
     = f.inputs do
       = b.input :image, :as => :file, :label => false
       = b.input :video, :input_html => { :placeholder => 'vimeo video id e.g. http://vimeo.com/_41363350_' }
+      = b.input :caption, :input_html => {:rows => 3}
       - unless b.object.image.url.blank?
         = responsive_image_tag b.object.image.non_retina_thumb.url, :style => "padding: 10px; display: block;"
       - unless b.object.video.blank?
