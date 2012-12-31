@@ -14,8 +14,8 @@
       #pin-it
         - @slides.each do |slide|
           = link_to "http://pinterest.com/pin/create/button/?url=#{request.protocol}#{request.host_with_port}#{request.fullpath}&media=#{u(slide.image.non_retina.url)}&description=#{}{strip_tags @project.subtitle}" do
+            = image_tag "pinterest.gif"
             pin it
-        = image_tag "pinterest.gif"
       = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=Goldteeth%26Co&p[summary]=#{strip_tags @project.subtitle}&p[url]=#{request.protocol}#{request.host_with_port}#{request.fullpath}&p[images][0]=#{@project.slides.first.image.url}" do
         = image_tag "facebook.gif"
         share
