@@ -2164,3 +2164,7 @@ LOG:  database system is ready to accept connections
 LOG:  autovacuum launcher started
 ERROR:  relation "artist_thumbs" already exists
 STATEMENT:  CREATE TABLE "artist_thumbs" ("id" serial primary key, "image" character varying(255), "artist_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+LOG:  received smart shutdown request
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
