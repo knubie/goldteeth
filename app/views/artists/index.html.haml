@@ -2,7 +2,7 @@
   - @artists.each do |artist|
     = link_to artist_path(artist.url_name), :class => "artist" do
       - if artist.artist_thumbs.length > 0
-        = responsive_image_tag artist.artist_thumbs[rand(artist.artist_thumbs.length)].image.non_retina.url, :width => 271
+        = responsive_image_tag artist.artist_thumbs[rand(artist.artist_thumbs.length)].image.non_retina.url
       - else
-        = responsive_image_tag artist.image.non_retina.url, :width => 271
+        = responsive_image_tag artist.image.non_retina.url
       = artist.name
