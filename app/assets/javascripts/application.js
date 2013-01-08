@@ -23,6 +23,6 @@
 //= require lightbox
 //= require hisrc
 
-$(function() {
+$(document).ready(function() {
   $('img').hisrc();
 });
