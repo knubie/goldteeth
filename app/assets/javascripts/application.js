@@ -24,5 +24,7 @@
 //= require hisrc
 
 $(document).ready(function() {
-  $('img').hisrc();
+	$('body').imagesloaded(function(){
+		$('img').hisrc();
+	});
 });
