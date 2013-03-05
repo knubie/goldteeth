@@ -2187,3 +2187,1257 @@ ERROR:  column "position" does not exist at character 80
 STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."artist_id" = 7 ORDER BY position
 ERROR:  column "position" does not exist at character 80
 STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."artist_id" = 5 ORDER BY position
+ERROR:  must be owner of relation unique_schema_migrations
+STATEMENT:  DROP INDEX public.unique_schema_migrations;
+	
+ERROR:  must be owner of relation index_slides_on_project_id
+STATEMENT:  DROP INDEX public.index_slides_on_project_id;
+	
+ERROR:  must be owner of relation index_projects_on_artist_id
+STATEMENT:  DROP INDEX public.index_projects_on_artist_id;
+	
+ERROR:  must be owner of relation index_post_images_on_post_id
+STATEMENT:  DROP INDEX public.index_post_images_on_post_id;
+	
+ERROR:  must be owner of relation index_admin_users_on_reset_password_token
+STATEMENT:  DROP INDEX public.index_admin_users_on_reset_password_token;
+	
+ERROR:  must be owner of relation index_admin_users_on_email
+STATEMENT:  DROP INDEX public.index_admin_users_on_email;
+	
+ERROR:  must be owner of relation index_admin_notes_on_resource_type_and_resource_id
+STATEMENT:  DROP INDEX public.index_admin_notes_on_resource_type_and_resource_id;
+	
+ERROR:  must be owner of relation index_active_admin_comments_on_namespace
+STATEMENT:  DROP INDEX public.index_active_admin_comments_on_namespace;
+	
+ERROR:  must be owner of relation index_active_admin_comments_on_author_type_and_author_id
+STATEMENT:  DROP INDEX public.index_active_admin_comments_on_author_type_and_author_id;
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  ALTER TABLE ONLY public.slides DROP CONSTRAINT slides_pkey;
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  ALTER TABLE ONLY public.projects DROP CONSTRAINT projects_pkey;
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  ALTER TABLE ONLY public.posts DROP CONSTRAINT posts_pkey;
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  ALTER TABLE ONLY public.post_images DROP CONSTRAINT post_images_pkey;
+	
+ERROR:  must be owner of relation information
+STATEMENT:  ALTER TABLE ONLY public.information DROP CONSTRAINT information_pkey;
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  ALTER TABLE ONLY public.artists DROP CONSTRAINT artists_pkey;
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  ALTER TABLE ONLY public.admin_users DROP CONSTRAINT admin_users_pkey;
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  ALTER TABLE ONLY public.active_admin_comments DROP CONSTRAINT admin_notes_pkey;
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  ALTER TABLE public.slides ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  ALTER TABLE public.projects ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  ALTER TABLE public.posts ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  ALTER TABLE public.post_images ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation information
+STATEMENT:  ALTER TABLE public.information ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  ALTER TABLE public.artists ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  ALTER TABLE public.admin_users ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  ALTER TABLE public.active_admin_comments ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation slides_id_seq
+STATEMENT:  DROP SEQUENCE public.slides_id_seq;
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  DROP TABLE public.slides;
+	
+ERROR:  must be owner of relation schema_migrations
+STATEMENT:  DROP TABLE public.schema_migrations;
+	
+ERROR:  must be owner of relation projects_id_seq
+STATEMENT:  DROP SEQUENCE public.projects_id_seq;
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  DROP TABLE public.projects;
+	
+ERROR:  must be owner of relation posts_id_seq
+STATEMENT:  DROP SEQUENCE public.posts_id_seq;
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  DROP TABLE public.posts;
+	
+ERROR:  must be owner of relation post_images_id_seq
+STATEMENT:  DROP SEQUENCE public.post_images_id_seq;
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  DROP TABLE public.post_images;
+	
+ERROR:  must be owner of relation information_id_seq
+STATEMENT:  DROP SEQUENCE public.information_id_seq;
+	
+ERROR:  must be owner of relation information
+STATEMENT:  DROP TABLE public.information;
+	
+ERROR:  must be owner of relation artists_id_seq
+STATEMENT:  DROP SEQUENCE public.artists_id_seq;
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  DROP TABLE public.artists;
+	
+ERROR:  must be owner of relation admin_users_id_seq
+STATEMENT:  DROP SEQUENCE public.admin_users_id_seq;
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  DROP TABLE public.admin_users;
+	
+ERROR:  must be owner of relation active_admin_comments_id_seq
+STATEMENT:  DROP SEQUENCE public.active_admin_comments_id_seq;
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  DROP TABLE public.active_admin_comments;
+	
+ERROR:  must be owner of extension plpgsql
+STATEMENT:  DROP EXTENSION plpgsql;
+	
+ERROR:  must be owner of schema public
+STATEMENT:  DROP SCHEMA public;
+	
+ERROR:  database "da34kipm81g36s" does not exist
+STATEMENT:  DROP DATABASE da34kipm81g36s;
+	
+ERROR:  schema "public" already exists
+STATEMENT:  CREATE SCHEMA public;
+	
+	
+	
+ERROR:  must be owner of schema public
+STATEMENT:  COMMENT ON SCHEMA public IS 'standard public schema';
+	
+	
+	
+ERROR:  must be owner of extension plpgsql
+STATEMENT:  COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+	
+	
+	
+ERROR:  relation "active_admin_comments" already exists
+STATEMENT:  CREATE TABLE active_admin_comments (
+	    id integer NOT NULL,
+	    resource_id character varying(255) NOT NULL,
+	    resource_type character varying(255) NOT NULL,
+	    author_id integer,
+	    author_type character varying(255),
+	    body text,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL,
+	    namespace character varying(255)
+	);
+	
+	
+	
+ERROR:  relation "active_admin_comments_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE active_admin_comments_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments_id_seq
+STATEMENT:  ALTER SEQUENCE active_admin_comments_id_seq OWNED BY active_admin_comments.id;
+	
+	
+	
+ERROR:  permission denied for sequence active_admin_comments_id_seq
+STATEMENT:  SELECT pg_catalog.setval('active_admin_comments_id_seq', 1, false);
+	
+	
+	
+ERROR:  relation "admin_users" already exists
+STATEMENT:  CREATE TABLE admin_users (
+	    id integer NOT NULL,
+	    email character varying(255) DEFAULT ''::character varying NOT NULL,
+	    encrypted_password character varying(255) DEFAULT ''::character varying NOT NULL,
+	    reset_password_token character varying(255),
+	    reset_password_sent_at timestamp without time zone,
+	    remember_created_at timestamp without time zone,
+	    sign_in_count integer DEFAULT 0,
+	    current_sign_in_at timestamp without time zone,
+	    last_sign_in_at timestamp without time zone,
+	    current_sign_in_ip character varying(255),
+	    last_sign_in_ip character varying(255),
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "admin_users_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE admin_users_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation admin_users_id_seq
+STATEMENT:  ALTER SEQUENCE admin_users_id_seq OWNED BY admin_users.id;
+	
+	
+	
+ERROR:  permission denied for sequence admin_users_id_seq
+STATEMENT:  SELECT pg_catalog.setval('admin_users_id_seq', 2, true);
+	
+	
+	
+ERROR:  relation "artists" already exists
+STATEMENT:  CREATE TABLE artists (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    bio text,
+	    image character varying(255),
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "artists_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE artists_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation artists_id_seq
+STATEMENT:  ALTER SEQUENCE artists_id_seq OWNED BY artists.id;
+	
+	
+	
+ERROR:  permission denied for sequence artists_id_seq
+STATEMENT:  SELECT pg_catalog.setval('artists_id_seq', 8, true);
+	
+	
+	
+ERROR:  relation "information" already exists
+STATEMENT:  CREATE TABLE information (
+	    id integer NOT NULL,
+	    text text,
+	    contact text,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "information_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE information_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation information_id_seq
+STATEMENT:  ALTER SEQUENCE information_id_seq OWNED BY information.id;
+	
+	
+	
+ERROR:  permission denied for sequence information_id_seq
+STATEMENT:  SELECT pg_catalog.setval('information_id_seq', 2, true);
+	
+	
+	
+ERROR:  relation "post_images" already exists
+STATEMENT:  CREATE TABLE post_images (
+	    id integer NOT NULL,
+	    image character varying(255),
+	    post_id integer,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "post_images_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE post_images_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation post_images_id_seq
+STATEMENT:  ALTER SEQUENCE post_images_id_seq OWNED BY post_images.id;
+	
+	
+	
+ERROR:  permission denied for sequence post_images_id_seq
+STATEMENT:  SELECT pg_catalog.setval('post_images_id_seq', 41, true);
+	
+	
+	
+ERROR:  relation "posts" already exists
+STATEMENT:  CREATE TABLE posts (
+	    id integer NOT NULL,
+	    client character varying(255),
+	    body text,
+	    thumb character varying(255),
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL,
+	    artist_id integer
+	);
+	
+	
+	
+ERROR:  relation "posts_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE posts_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation posts_id_seq
+STATEMENT:  ALTER SEQUENCE posts_id_seq OWNED BY posts.id;
+	
+	
+	
+ERROR:  permission denied for sequence posts_id_seq
+STATEMENT:  SELECT pg_catalog.setval('posts_id_seq', 10, true);
+	
+	
+	
+ERROR:  relation "projects" already exists
+STATEMENT:  CREATE TABLE projects (
+	    id integer NOT NULL,
+	    title character varying(255),
+	    subtitle text,
+	    client character varying(255),
+	    image character varying(255),
+	    artist_id integer,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "projects_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE projects_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation projects_id_seq
+STATEMENT:  ALTER SEQUENCE projects_id_seq OWNED BY projects.id;
+	
+	
+	
+ERROR:  permission denied for sequence projects_id_seq
+STATEMENT:  SELECT pg_catalog.setval('projects_id_seq', 6, true);
+	
+	
+	
+ERROR:  relation "schema_migrations" already exists
+STATEMENT:  CREATE TABLE schema_migrations (
+	    version character varying(255) NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "slides" already exists
+STATEMENT:  CREATE TABLE slides (
+	    id integer NOT NULL,
+	    image character varying(255),
+	    project_id integer,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL,
+	    "position" integer
+	);
+	
+	
+	
+ERROR:  relation "slides_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE slides_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation slides_id_seq
+STATEMENT:  ALTER SEQUENCE slides_id_seq OWNED BY slides.id;
+	
+	
+	
+ERROR:  permission denied for sequence slides_id_seq
+STATEMENT:  SELECT pg_catalog.setval('slides_id_seq', 109, true);
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  ALTER TABLE ONLY active_admin_comments ALTER COLUMN id SET DEFAULT nextval('active_admin_comments_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  ALTER TABLE ONLY admin_users ALTER COLUMN id SET DEFAULT nextval('admin_users_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  ALTER TABLE ONLY artists ALTER COLUMN id SET DEFAULT nextval('artists_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation information
+STATEMENT:  ALTER TABLE ONLY information ALTER COLUMN id SET DEFAULT nextval('information_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  ALTER TABLE ONLY post_images ALTER COLUMN id SET DEFAULT nextval('post_images_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  ALTER TABLE ONLY posts ALTER COLUMN id SET DEFAULT nextval('posts_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  ALTER TABLE ONLY projects ALTER COLUMN id SET DEFAULT nextval('projects_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  ALTER TABLE ONLY slides ALTER COLUMN id SET DEFAULT nextval('slides_id_seq'::regclass);
+	
+	
+	
+ERROR:  permission denied for relation active_admin_comments
+STATEMENT:  COPY active_admin_comments (id, resource_id, resource_type, author_id, author_type, body, created_at, updated_at, namespace) FROM stdin;
+	
+ERROR:  permission denied for relation admin_users
+STATEMENT:  COPY admin_users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
+	
+ERROR:  permission denied for relation artists
+STATEMENT:  COPY artists (id, name, bio, image, created_at, updated_at) FROM stdin;
+	
+ERROR:  permission denied for relation information
+STATEMENT:  COPY information (id, text, contact, created_at, updated_at) FROM stdin;
+	
+ERROR:  permission denied for relation post_images
+STATEMENT:  COPY post_images (id, image, post_id, created_at, updated_at) FROM stdin;
+	
+ERROR:  permission denied for relation posts
+STATEMENT:  COPY posts (id, client, body, thumb, created_at, updated_at, artist_id) FROM stdin;
+	
+ERROR:  permission denied for relation projects
+STATEMENT:  COPY projects (id, title, subtitle, client, image, artist_id, created_at, updated_at) FROM stdin;
+	
+ERROR:  permission denied for relation schema_migrations
+STATEMENT:  COPY schema_migrations (version) FROM stdin;
+	
+ERROR:  permission denied for relation slides
+STATEMENT:  COPY slides (id, image, project_id, created_at, updated_at, "position") FROM stdin;
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  ALTER TABLE ONLY active_admin_comments
+	    ADD CONSTRAINT admin_notes_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  ALTER TABLE ONLY admin_users
+	    ADD CONSTRAINT admin_users_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  ALTER TABLE ONLY artists
+	    ADD CONSTRAINT artists_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation information
+STATEMENT:  ALTER TABLE ONLY information
+	    ADD CONSTRAINT information_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  ALTER TABLE ONLY post_images
+	    ADD CONSTRAINT post_images_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  ALTER TABLE ONLY posts
+	    ADD CONSTRAINT posts_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  ALTER TABLE ONLY projects
+	    ADD CONSTRAINT projects_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  ALTER TABLE ONLY slides
+	    ADD CONSTRAINT slides_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  CREATE INDEX index_active_admin_comments_on_author_type_and_author_id ON active_admin_comments USING btree (author_type, author_id);
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  CREATE INDEX index_active_admin_comments_on_namespace ON active_admin_comments USING btree (namespace);
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  CREATE INDEX index_admin_notes_on_resource_type_and_resource_id ON active_admin_comments USING btree (resource_type, resource_id);
+	
+	
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  CREATE UNIQUE INDEX index_admin_users_on_email ON admin_users USING btree (email);
+	
+	
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  CREATE UNIQUE INDEX index_admin_users_on_reset_password_token ON admin_users USING btree (reset_password_token);
+	
+	
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  CREATE INDEX index_post_images_on_post_id ON post_images USING btree (post_id);
+	
+	
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  CREATE INDEX index_projects_on_artist_id ON projects USING btree (artist_id);
+	
+	
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  CREATE INDEX index_slides_on_project_id ON slides USING btree (project_id);
+	
+	
+	
+ERROR:  must be owner of relation schema_migrations
+STATEMENT:  CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+	
+	
+	
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+FATAL:  terminating connection due to administrator command
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-03-05 12:13:46 EST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  must be owner of relation unique_schema_migrations
+STATEMENT:  DROP INDEX public.unique_schema_migrations;
+	
+ERROR:  must be owner of relation index_slides_on_project_id
+STATEMENT:  DROP INDEX public.index_slides_on_project_id;
+	
+ERROR:  must be owner of relation index_projects_on_artist_id
+STATEMENT:  DROP INDEX public.index_projects_on_artist_id;
+	
+ERROR:  must be owner of relation index_post_images_on_post_id
+STATEMENT:  DROP INDEX public.index_post_images_on_post_id;
+	
+ERROR:  must be owner of relation index_artist_thumbs_on_artist_id
+STATEMENT:  DROP INDEX public.index_artist_thumbs_on_artist_id;
+	
+ERROR:  must be owner of relation index_admin_users_on_reset_password_token
+STATEMENT:  DROP INDEX public.index_admin_users_on_reset_password_token;
+	
+ERROR:  must be owner of relation index_admin_users_on_email
+STATEMENT:  DROP INDEX public.index_admin_users_on_email;
+	
+ERROR:  must be owner of relation index_admin_notes_on_resource_type_and_resource_id
+STATEMENT:  DROP INDEX public.index_admin_notes_on_resource_type_and_resource_id;
+	
+ERROR:  must be owner of relation index_active_admin_comments_on_namespace
+STATEMENT:  DROP INDEX public.index_active_admin_comments_on_namespace;
+	
+ERROR:  must be owner of relation index_active_admin_comments_on_author_type_and_author_id
+STATEMENT:  DROP INDEX public.index_active_admin_comments_on_author_type_and_author_id;
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  ALTER TABLE ONLY public.slides DROP CONSTRAINT slides_pkey;
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  ALTER TABLE ONLY public.projects DROP CONSTRAINT projects_pkey;
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  ALTER TABLE ONLY public.posts DROP CONSTRAINT posts_pkey;
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  ALTER TABLE ONLY public.post_images DROP CONSTRAINT post_images_pkey;
+	
+ERROR:  must be owner of relation information
+STATEMENT:  ALTER TABLE ONLY public.information DROP CONSTRAINT information_pkey;
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  ALTER TABLE ONLY public.artists DROP CONSTRAINT artists_pkey;
+	
+ERROR:  must be owner of relation artist_thumbs
+STATEMENT:  ALTER TABLE ONLY public.artist_thumbs DROP CONSTRAINT artist_thumbs_pkey;
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  ALTER TABLE ONLY public.admin_users DROP CONSTRAINT admin_users_pkey;
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  ALTER TABLE ONLY public.active_admin_comments DROP CONSTRAINT admin_notes_pkey;
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  ALTER TABLE public.slides ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  ALTER TABLE public.projects ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  ALTER TABLE public.posts ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  ALTER TABLE public.post_images ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation information
+STATEMENT:  ALTER TABLE public.information ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  ALTER TABLE public.artists ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation artist_thumbs
+STATEMENT:  ALTER TABLE public.artist_thumbs ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  ALTER TABLE public.admin_users ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  ALTER TABLE public.active_admin_comments ALTER COLUMN id DROP DEFAULT;
+	
+ERROR:  must be owner of relation slides_id_seq
+STATEMENT:  DROP SEQUENCE public.slides_id_seq;
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  DROP TABLE public.slides;
+	
+ERROR:  must be owner of relation schema_migrations
+STATEMENT:  DROP TABLE public.schema_migrations;
+	
+ERROR:  must be owner of relation projects_id_seq
+STATEMENT:  DROP SEQUENCE public.projects_id_seq;
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  DROP TABLE public.projects;
+	
+ERROR:  must be owner of relation posts_id_seq
+STATEMENT:  DROP SEQUENCE public.posts_id_seq;
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  DROP TABLE public.posts;
+	
+ERROR:  must be owner of relation post_images_id_seq
+STATEMENT:  DROP SEQUENCE public.post_images_id_seq;
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  DROP TABLE public.post_images;
+	
+ERROR:  must be owner of relation information_id_seq
+STATEMENT:  DROP SEQUENCE public.information_id_seq;
+	
+ERROR:  must be owner of relation information
+STATEMENT:  DROP TABLE public.information;
+	
+ERROR:  must be owner of relation artists_id_seq
+STATEMENT:  DROP SEQUENCE public.artists_id_seq;
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  DROP TABLE public.artists;
+	
+ERROR:  must be owner of relation artist_thumbs_id_seq
+STATEMENT:  DROP SEQUENCE public.artist_thumbs_id_seq;
+	
+ERROR:  must be owner of relation artist_thumbs
+STATEMENT:  DROP TABLE public.artist_thumbs;
+	
+ERROR:  must be owner of relation admin_users_id_seq
+STATEMENT:  DROP SEQUENCE public.admin_users_id_seq;
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  DROP TABLE public.admin_users;
+	
+ERROR:  must be owner of relation active_admin_comments_id_seq
+STATEMENT:  DROP SEQUENCE public.active_admin_comments_id_seq;
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  DROP TABLE public.active_admin_comments;
+	
+ERROR:  must be owner of extension plpgsql
+STATEMENT:  DROP EXTENSION plpgsql;
+	
+ERROR:  must be owner of schema public
+STATEMENT:  DROP SCHEMA public;
+	
+ERROR:  database "da34kipm81g36s" does not exist
+STATEMENT:  DROP DATABASE da34kipm81g36s;
+	
+ERROR:  schema "public" already exists
+STATEMENT:  CREATE SCHEMA public;
+	
+	
+	
+ERROR:  must be owner of schema public
+STATEMENT:  COMMENT ON SCHEMA public IS 'standard public schema';
+	
+	
+	
+ERROR:  must be owner of extension plpgsql
+STATEMENT:  COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+	
+	
+	
+ERROR:  relation "active_admin_comments" already exists
+STATEMENT:  CREATE TABLE active_admin_comments (
+	    id integer NOT NULL,
+	    resource_id character varying(255) NOT NULL,
+	    resource_type character varying(255) NOT NULL,
+	    author_id integer,
+	    author_type character varying(255),
+	    body text,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL,
+	    namespace character varying(255)
+	);
+	
+	
+	
+ERROR:  relation "active_admin_comments_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE active_admin_comments_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments_id_seq
+STATEMENT:  ALTER SEQUENCE active_admin_comments_id_seq OWNED BY active_admin_comments.id;
+	
+	
+	
+ERROR:  permission denied for sequence active_admin_comments_id_seq
+STATEMENT:  SELECT pg_catalog.setval('active_admin_comments_id_seq', 1, false);
+	
+	
+	
+ERROR:  relation "admin_users" already exists
+STATEMENT:  CREATE TABLE admin_users (
+	    id integer NOT NULL,
+	    email character varying(255) DEFAULT ''::character varying NOT NULL,
+	    encrypted_password character varying(255) DEFAULT ''::character varying NOT NULL,
+	    reset_password_token character varying(255),
+	    reset_password_sent_at timestamp without time zone,
+	    remember_created_at timestamp without time zone,
+	    sign_in_count integer DEFAULT 0,
+	    current_sign_in_at timestamp without time zone,
+	    last_sign_in_at timestamp without time zone,
+	    current_sign_in_ip character varying(255),
+	    last_sign_in_ip character varying(255),
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "admin_users_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE admin_users_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation admin_users_id_seq
+STATEMENT:  ALTER SEQUENCE admin_users_id_seq OWNED BY admin_users.id;
+	
+	
+	
+ERROR:  permission denied for sequence admin_users_id_seq
+STATEMENT:  SELECT pg_catalog.setval('admin_users_id_seq', 2, true);
+	
+	
+	
+ERROR:  relation "artist_thumbs" already exists
+STATEMENT:  CREATE TABLE artist_thumbs (
+	    id integer NOT NULL,
+	    image character varying(255),
+	    artist_id integer,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "artist_thumbs_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE artist_thumbs_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation artist_thumbs_id_seq
+STATEMENT:  ALTER SEQUENCE artist_thumbs_id_seq OWNED BY artist_thumbs.id;
+	
+	
+	
+ERROR:  permission denied for sequence artist_thumbs_id_seq
+STATEMENT:  SELECT pg_catalog.setval('artist_thumbs_id_seq', 68, true);
+	
+	
+	
+ERROR:  relation "artists" already exists
+STATEMENT:  CREATE TABLE artists (
+	    id integer NOT NULL,
+	    name character varying(255),
+	    bio text,
+	    image character varying(255),
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL,
+	    "position" integer
+	);
+	
+	
+	
+ERROR:  relation "artists_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE artists_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation artists_id_seq
+STATEMENT:  ALTER SEQUENCE artists_id_seq OWNED BY artists.id;
+	
+	
+	
+ERROR:  permission denied for sequence artists_id_seq
+STATEMENT:  SELECT pg_catalog.setval('artists_id_seq', 11, true);
+	
+	
+	
+ERROR:  relation "information" already exists
+STATEMENT:  CREATE TABLE information (
+	    id integer NOT NULL,
+	    text text,
+	    contact text,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "information_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE information_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation information_id_seq
+STATEMENT:  ALTER SEQUENCE information_id_seq OWNED BY information.id;
+	
+	
+	
+ERROR:  permission denied for sequence information_id_seq
+STATEMENT:  SELECT pg_catalog.setval('information_id_seq', 2, true);
+	
+	
+	
+ERROR:  relation "post_images" already exists
+STATEMENT:  CREATE TABLE post_images (
+	    id integer NOT NULL,
+	    image character varying(255),
+	    post_id integer,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL,
+	    "position" integer,
+	    video character varying(255),
+	    caption character varying(255)
+	);
+	
+	
+	
+ERROR:  relation "post_images_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE post_images_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation post_images_id_seq
+STATEMENT:  ALTER SEQUENCE post_images_id_seq OWNED BY post_images.id;
+	
+	
+	
+ERROR:  permission denied for sequence post_images_id_seq
+STATEMENT:  SELECT pg_catalog.setval('post_images_id_seq', 368, true);
+	
+	
+	
+ERROR:  relation "posts" already exists
+STATEMENT:  CREATE TABLE posts (
+	    id integer NOT NULL,
+	    client character varying(255),
+	    body text,
+	    thumb character varying(255),
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL,
+	    artist_id integer
+	);
+	
+	
+	
+ERROR:  relation "posts_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE posts_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation posts_id_seq
+STATEMENT:  ALTER SEQUENCE posts_id_seq OWNED BY posts.id;
+	
+	
+	
+ERROR:  permission denied for sequence posts_id_seq
+STATEMENT:  SELECT pg_catalog.setval('posts_id_seq', 126, true);
+	
+	
+	
+ERROR:  relation "projects" already exists
+STATEMENT:  CREATE TABLE projects (
+	    id integer NOT NULL,
+	    title character varying(255),
+	    subtitle text,
+	    client character varying(255),
+	    image character varying(255),
+	    artist_id integer,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL,
+	    "position" integer
+	);
+	
+	
+	
+ERROR:  relation "projects_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE projects_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation projects_id_seq
+STATEMENT:  ALTER SEQUENCE projects_id_seq OWNED BY projects.id;
+	
+	
+	
+ERROR:  permission denied for sequence projects_id_seq
+STATEMENT:  SELECT pg_catalog.setval('projects_id_seq', 65, true);
+	
+	
+	
+ERROR:  relation "schema_migrations" already exists
+STATEMENT:  CREATE TABLE schema_migrations (
+	    version character varying(255) NOT NULL
+	);
+	
+	
+	
+ERROR:  relation "slides" already exists
+STATEMENT:  CREATE TABLE slides (
+	    id integer NOT NULL,
+	    image character varying(255),
+	    project_id integer,
+	    created_at timestamp without time zone NOT NULL,
+	    updated_at timestamp without time zone NOT NULL,
+	    "position" integer,
+	    video character varying(255),
+	    caption text
+	);
+	
+	
+	
+ERROR:  relation "slides_id_seq" already exists
+STATEMENT:  CREATE SEQUENCE slides_id_seq
+	    START WITH 1
+	    INCREMENT BY 1
+	    NO MINVALUE
+	    NO MAXVALUE
+	    CACHE 1;
+	
+	
+	
+ERROR:  must be owner of relation slides_id_seq
+STATEMENT:  ALTER SEQUENCE slides_id_seq OWNED BY slides.id;
+	
+	
+	
+ERROR:  permission denied for sequence slides_id_seq
+STATEMENT:  SELECT pg_catalog.setval('slides_id_seq', 1549, true);
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  ALTER TABLE ONLY active_admin_comments ALTER COLUMN id SET DEFAULT nextval('active_admin_comments_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  ALTER TABLE ONLY admin_users ALTER COLUMN id SET DEFAULT nextval('admin_users_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation artist_thumbs
+STATEMENT:  ALTER TABLE ONLY artist_thumbs ALTER COLUMN id SET DEFAULT nextval('artist_thumbs_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  ALTER TABLE ONLY artists ALTER COLUMN id SET DEFAULT nextval('artists_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation information
+STATEMENT:  ALTER TABLE ONLY information ALTER COLUMN id SET DEFAULT nextval('information_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  ALTER TABLE ONLY post_images ALTER COLUMN id SET DEFAULT nextval('post_images_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  ALTER TABLE ONLY posts ALTER COLUMN id SET DEFAULT nextval('posts_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  ALTER TABLE ONLY projects ALTER COLUMN id SET DEFAULT nextval('projects_id_seq'::regclass);
+	
+	
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  ALTER TABLE ONLY slides ALTER COLUMN id SET DEFAULT nextval('slides_id_seq'::regclass);
+	
+	
+	
+ERROR:  permission denied for relation active_admin_comments
+STATEMENT:  COPY active_admin_comments (id, resource_id, resource_type, author_id, author_type, body, created_at, updated_at, namespace) FROM stdin;
+	
+ERROR:  permission denied for relation admin_users
+STATEMENT:  COPY admin_users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at) FROM stdin;
+	
+ERROR:  permission denied for relation artist_thumbs
+STATEMENT:  COPY artist_thumbs (id, image, artist_id, created_at, updated_at) FROM stdin;
+	
+ERROR:  permission denied for relation artists
+STATEMENT:  COPY artists (id, name, bio, image, created_at, updated_at, "position") FROM stdin;
+	
+ERROR:  permission denied for relation information
+STATEMENT:  COPY information (id, text, contact, created_at, updated_at) FROM stdin;
+	
+ERROR:  column "video" of relation "post_images" does not exist
+STATEMENT:  COPY post_images (id, image, post_id, created_at, updated_at, "position", video, caption) FROM stdin;
+	
+ERROR:  permission denied for relation posts
+STATEMENT:  COPY posts (id, client, body, thumb, created_at, updated_at, artist_id) FROM stdin;
+	
+ERROR:  column "position" of relation "projects" does not exist
+STATEMENT:  COPY projects (id, title, subtitle, client, image, artist_id, created_at, updated_at, "position") FROM stdin;
+	
+ERROR:  permission denied for relation schema_migrations
+STATEMENT:  COPY schema_migrations (version) FROM stdin;
+	
+ERROR:  column "caption" of relation "slides" does not exist
+STATEMENT:  COPY slides (id, image, project_id, created_at, updated_at, "position", video, caption) FROM stdin;
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  ALTER TABLE ONLY active_admin_comments
+	    ADD CONSTRAINT admin_notes_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  ALTER TABLE ONLY admin_users
+	    ADD CONSTRAINT admin_users_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation artist_thumbs
+STATEMENT:  ALTER TABLE ONLY artist_thumbs
+	    ADD CONSTRAINT artist_thumbs_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation artists
+STATEMENT:  ALTER TABLE ONLY artists
+	    ADD CONSTRAINT artists_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation information
+STATEMENT:  ALTER TABLE ONLY information
+	    ADD CONSTRAINT information_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  ALTER TABLE ONLY post_images
+	    ADD CONSTRAINT post_images_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation posts
+STATEMENT:  ALTER TABLE ONLY posts
+	    ADD CONSTRAINT posts_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  ALTER TABLE ONLY projects
+	    ADD CONSTRAINT projects_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  ALTER TABLE ONLY slides
+	    ADD CONSTRAINT slides_pkey PRIMARY KEY (id);
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  CREATE INDEX index_active_admin_comments_on_author_type_and_author_id ON active_admin_comments USING btree (author_type, author_id);
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  CREATE INDEX index_active_admin_comments_on_namespace ON active_admin_comments USING btree (namespace);
+	
+	
+	
+ERROR:  must be owner of relation active_admin_comments
+STATEMENT:  CREATE INDEX index_admin_notes_on_resource_type_and_resource_id ON active_admin_comments USING btree (resource_type, resource_id);
+	
+	
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  CREATE UNIQUE INDEX index_admin_users_on_email ON admin_users USING btree (email);
+	
+	
+	
+ERROR:  must be owner of relation admin_users
+STATEMENT:  CREATE UNIQUE INDEX index_admin_users_on_reset_password_token ON admin_users USING btree (reset_password_token);
+	
+	
+	
+ERROR:  must be owner of relation artist_thumbs
+STATEMENT:  CREATE INDEX index_artist_thumbs_on_artist_id ON artist_thumbs USING btree (artist_id);
+	
+	
+	
+ERROR:  must be owner of relation post_images
+STATEMENT:  CREATE INDEX index_post_images_on_post_id ON post_images USING btree (post_id);
+	
+	
+	
+ERROR:  must be owner of relation projects
+STATEMENT:  CREATE INDEX index_projects_on_artist_id ON projects USING btree (artist_id);
+	
+	
+	
+ERROR:  must be owner of relation slides
+STATEMENT:  CREATE INDEX index_slides_on_project_id ON slides USING btree (project_id);
+	
+	
+	
+ERROR:  must be owner of relation schema_migrations
+STATEMENT:  CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
+	
+	
+	
+ERROR:  relation "artist_thumbs" already exists
+STATEMENT:  CREATE TABLE "artist_thumbs" ("id" serial primary key, "image" character varying(255), "artist_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+ERROR:  database "da34kipm81g36s" does not exist
+STATEMENT:  DROP DATABASE da34kipm81g36s;
+	
