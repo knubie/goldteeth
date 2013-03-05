@@ -1,6 +1,5 @@
-$ ->
-  $('.count').html('(<%= session[:slides].length %>)')
-  $('.count').css('color', 'red')
-  $('.count').animate
-    color: '#808080'
-  , 1000
+$('.count').html('(<%= session[:slides].length %>)')
+$('.count').css('color', 'red')
+$('.count').animate
+  color: '#808080'
+, 1000
