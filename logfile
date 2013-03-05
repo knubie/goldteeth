@@ -2168,3 +2168,22 @@ LOG:  received smart shutdown request
 LOG:  autovacuum launcher shutting down
 LOG:  shutting down
 LOG:  database system is shut down
+LOG:  database system was shut down at 2012-12-16 13:04:41 EST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+ERROR:  relation "artists" does not exist at character 245
+STATEMENT:              SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+	              FROM pg_attribute a LEFT JOIN pg_attrdef d
+	                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+	             WHERE a.attrelid = '"artists"'::regclass
+	               AND a.attnum > 0 AND NOT a.attisdropped
+	             ORDER BY a.attnum
+	
+ERROR:  column "position" does not exist at character 80
+STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."artist_id" = 7 ORDER BY position
+ERROR:  relation "artist_thumbs" already exists
+STATEMENT:  CREATE TABLE "artist_thumbs" ("id" serial primary key, "image" character varying(255), "artist_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+ERROR:  column "position" does not exist at character 80
+STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."artist_id" = 7 ORDER BY position
+ERROR:  column "position" does not exist at character 80
+STATEMENT:  SELECT "projects".* FROM "projects"  WHERE "projects"."artist_id" = 5 ORDER BY position

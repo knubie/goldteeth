@@ -13,7 +13,7 @@
         = tweet.text.gsub(/(http:\/\/\S*)/, '<a href="\1" target="_blank">\1</a>').html_safe
   #instafeed
     #instafeed-title instafeed
-    - Instagram.user_media_feed(:count => 20).data.each_with_index do |data, i|
+    - Instagram.user_media_feed(:count => 25).data.each_with_index do |data, i|
       - unless i > 9
         .photo
           = link_to image_tag(data.images.thumbnail.url), data.link, :target => "_blank"
