@@ -10,7 +10,8 @@
       = link_to post_path(post.id), :class => "project" do
         - if post.thumb.present?
           = responsive_image_tag post.thumb.non_retina_thumb.url
-        .caption
-          .artist-name= post.artist.name
-          .slash= "/"
-          .client= post.client
+        - if post.artist.present?
+          .caption
+            .artist-name= post.artist.name
+            .slash= "/"
+            .client= post.client

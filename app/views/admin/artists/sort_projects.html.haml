@@ -1,5 +1,5 @@
 %ul#sortable-slides{:data => {:update_url => sort_projects_url}}
   - @projects.each do |project|
     = content_tag_for :li, project do
-      = image_tag project.image.url, :style => 'width: 200px;'
+      = responsive_image_tag project.image.non_retina_thumb.url, :style => 'width: 200px;'
       = project.title
