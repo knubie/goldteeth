@@ -23,7 +23,9 @@ ActiveAdmin.register Project do
     column :client
     column :title
     column "Thumb" do |project|
-      responsive_image_tag project.image.non_retina_thumb.url, :width => 100
+      if project.image.present?
+        responsive_image_tag project.image.non_retina_thumb.url, :width => 100
+      end
     end
     column :created_at
     column "" do |project|
