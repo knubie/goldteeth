@@ -16,5 +16,20 @@ $(document).ready(function() {
       $.post($(this).data('update_url'), $(this).sortable('serialize'))
     }
   });
+  $('.action_item > a').click(function() {
+    // Change text in button to indicate working
+    $(this).text('Saving...');
+    $.post($('#sortable-slides').data('update_url'), $('#sortable-slides').sortable('serialize'), function(data){
+      // Put text back into button
+      $('.action_item > a').text('Save');
+      // Add success flash
+      $('#title_bar').after('<div class="flashes"><div class="flash flash_notice">Sort order was successfully updated.</div></div>');
+      $('.flash_notice').hide().slideToggle(300);
+      // Remove success flash
+      setTimeout(function() {
+        $('.flashes').fadeOut(function(){$(this).remove()});
+      }, 5000);
+    });
+  });
 
 });
