@@ -5,8 +5,14 @@ ActiveAdmin.register Project do
     @slides = @project.slides.order 'position'
   end
 
+  config.clear_action_items!
+
   action_item :only => :sort do
-    link_to('Save', 'javascript:void(0)', :params => 'hello')
+    link_to('Save', 'javascript:void(0)')
+  end
+
+  action_item :only => :index do
+    link_to('New Project', new_admin_project_path)
   end
 
   menu :parent => "Artists"
