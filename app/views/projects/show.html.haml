@@ -11,19 +11,24 @@
       &nbsp;&nbsp;|&nbsp;&nbsp;
       = link_to 'next', 'javascript:void(0);', :id => 'next'
     #right
-      #pin-it
-        - @slides.each do |slide|
-          = link_to "http://pinterest.com/pin/create/button/?url=#{request.protocol}#{request.host_with_port}#{request.fullpath}&media=#{u(slide.image.non_retina.url)}&description=#{strip_tags @project.subtitle}" do
-            = image_tag "pinterest.gif"
-            pin it
+      #tumblr
+        - @slides.to_enum.with_index(1).each do |slide, i|
+          = link_to "http://www.tumblr.com/share/link?url=#{request.protocol}#{request.host_with_port}#{project_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}&name=#{@title}&description=#{strip_tags @desc}" do
+            = image_tag "tumblr.png"
+            tumblr
+      -##pin-it
+        -#- @slides.each do |slide|
+          -#= link_to "http://pinterest.com/pin/create/button/?url=#{request.protocol}#{request.host_with_port}#{request.fullpath}&media=#{u(slide.image.non_retina.url)}&description=#{strip_tags @project.subtitle}" do
+            -#= image_tag "pinterest.gif"
+            -#pin it
       #facebook
         - @slides.to_enum.with_index(1).each do |slide, i|
-          = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=Goldteeth%26Co%20%2F%20#{@artist.name}%20%2F%20#{@project.title}&p[summary]=#{strip_tags @project.subtitle}&p[url]=#{request.protocol}#{request.host_with_port}#{request.fullpath}?slide=#{i}&p[images][0]=#{slide.image.non_retina.url}", :target => "_blank" do
+          = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=#{@title}&p[summary]=#{strip_tags @desc}&p[url]=#{request.protocol}#{request.host_with_port}#{project_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}&p[images][0]=#{slide.image.non_retina.url}", :target => "_blank" do
             = image_tag "facebook.gif"
             share
       #twitter
-        - @slides.each do |slide|
-          = link_to "http://twitter.com/share?url=#{request.protocol}#{request.host_with_port}#{request.fullpath}" do
+        - @slides.to_enum.with_index(1).each do |slide, i|
+          = link_to "http://twitter.com/share?url=#{request.protocol}#{request.host_with_port}#{project_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}" do
             = image_tag "twitter.gif"
             tweet
       = link_to "", :id => "lightbox", :remote => true do

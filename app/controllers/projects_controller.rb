@@ -4,6 +4,10 @@ class ProjectsController < ApplicationController
     @artist = Artist.find(:first, :conditions => [ "lower(name) = ?", params[:name].gsub('-', ' ').tr('_', ' ').gsub(/\s+/, ' ').gsub(/\b\w/){ $`[-1,1] == "'" ? $& : $&.upcase }.downcase ])
     @project = @artist.projects.find(:first, :conditions => [ "lower(title) = ?", params[:title].gsub('-', ' ').tr('_', ' ').gsub(/\s+/, ' ').gsub(/\b\w/){ $`[-1,1] == "'" ? $& : $&.upcase }.downcase ])
     @slides = @project.slides.order 'position'
+    # For share links
+    @url = ""
+    @title = "Goldteeth%26Co%20%2F%20#{@artist.name}%20%2F%20#{@project.title}"
+    @desc = @project.subtitle
   end
 
   def grid
