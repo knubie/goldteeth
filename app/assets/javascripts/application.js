@@ -17,6 +17,7 @@
 //= require artists
 //= require jquery.imagesloaded.min
 //= require jquery.masonry.min
+//= require jquery.masonry.ordered
 //= require slides
 //= require projects
 //= require news
