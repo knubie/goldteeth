@@ -13,7 +13,7 @@
     #right
       #tumblr
         - @slides.to_enum.with_index(1).each do |slide, i|
-          = link_to "http://www.tumblr.com/share/link?url=#{request.protocol}#{request.host_with_port}#{project_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}&name=#{@title}&description=#{strip_tags @desc}" do
+          = link_to "http://www.tumblr.com/share/link?url=http%3A%2F%2F#{request.host}#{project_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}&name=#{@title}&description=#{strip_tags @desc}", :target => "_blank" do
             = image_tag "tumblr.png"
             tumblr
       -##pin-it
@@ -23,12 +23,12 @@
             -#pin it
       #facebook
         - @slides.to_enum.with_index(1).each do |slide, i|
-          = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=#{@title}&p[summary]=#{strip_tags @desc}&p[url]=#{request.protocol}#{request.host_with_port}#{project_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}&p[images][0]=#{slide.image.non_retina.url}", :target => "_blank" do
+          = link_to "http://www.facebook.com/sharer.php?s=100&p[title]=#{@title}&p[summary]=#{strip_tags @desc}&p[url]=http%3A%2F%2F#{request.host}#{project_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}&p[images][0]=#{slide.image.non_retina.url}", :target => "_blank" do
             = image_tag "facebook.gif"
             share
       #twitter
         - @slides.to_enum.with_index(1).each do |slide, i|
-          = link_to "http://twitter.com/share?url=#{request.protocol}#{request.host_with_port}#{project_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}" do
+          = link_to "http://twitter.com/share?url=http%3A%2F%2F#{request.host}#{project_path(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}" do
             = image_tag "twitter.gif"
             tweet
       = link_to "", :id => "lightbox", :remote => true do
