@@ -9,7 +9,7 @@
       &nbsp;&nbsp;|&nbsp;&nbsp;
       = link_to 'next', 'javascript:void(0);', :class => 'next'
     .slides
-      - post.post_images.each do |post_image|
+      - post.post_images.order('position').each do |post_image|
         - if post_image.video.present?
           %iframe(src="http://player.vimeo.com/video/#{post_image.video}?title=0&byline=0&portrait=0&color=ffffff" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
         - else
