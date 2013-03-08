@@ -16,8 +16,8 @@ $(document).ready(function() {
       $.post($(this).data('update_url'), $(this).sortable('serialize'))
     }
   });
-  $('.sort .action_item > a').click(function() {
     // Change text in button to indicate working
+  $('.sort .action_item > a').click(function() {
     $(this).text('Saving...');
     $.post($('#sortable-slides').data('update_url'), $('#sortable-slides').sortable('serialize'), function(data){
       // Put text back into button

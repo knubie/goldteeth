@@ -32,12 +32,16 @@
     }
     #pin-it, #facebook, #twitter, #tumblr {
       display: inline;
+      a {
+        display: none;
+      }
     }
   }
   #slides {
     clear: both;
     text-align: center;
     .slide {
+      display: none;
       .caption {
         text-align: left;
         font-size: 12px;
