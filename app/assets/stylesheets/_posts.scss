@@ -11,6 +11,11 @@
     border-bottom: 1px solid $g90;
     color: $g20;
     .slide, iframe { margin-bottom: 30px; }
+    .slides {
+      .slide {
+        display: none;
+      }
+    }
     .date {
       line-height: 24px;
       font-size: 18px;
