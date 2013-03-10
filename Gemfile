@@ -23,6 +23,7 @@ gem "wkhtmltopdf-binary"
 gem "instagram"
 gem 'kaminari'
 gem 'hisrc-rails'
+gem 'rufus-scheduler'
 
 # Gems used only for assets and not required in production environments by default.
 group :assets do
