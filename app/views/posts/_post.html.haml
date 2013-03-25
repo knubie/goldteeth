@@ -31,7 +31,7 @@
       = post.created_at.getlocal.strftime("%b %e, %Y")
   .body
     = post.body.html_safe
-  .social
+  .social-links
     = link_to "http://www.tumblr.com/share/link?url=#{url_encode post_url(post)}&name=#{url_encode post.artist.name if post.artist.present?}%20%2F%20#{url_encode post.client if post.client.present?}", :target => "_blank" do
       = image_tag "tumblr.png"
       tumblr
