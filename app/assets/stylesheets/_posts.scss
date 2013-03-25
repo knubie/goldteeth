@@ -10,10 +10,24 @@
     margin-bottom: 65px;
     border-bottom: 1px solid $g90;
     color: $g20;
-    .slide, iframe { margin-bottom: 30px; }
     .slides {
+      clear: both;
+      text-align: center;
       .slide {
         display: none;
+      }
+    }
+    .slide {
+      margin-bottom: 30px;
+      .caption {
+        text-align: left;
+        font-size: 12px;
+        line-height: 20px;
+        color: $g20;
+        margin-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $g90;
+        font-style: italic;
       }
     }
     .date {
