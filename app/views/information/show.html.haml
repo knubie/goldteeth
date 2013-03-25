@@ -4,13 +4,6 @@
   .text
     = Information.first.text.html_safe
   #twitter
-    / TODO: authenticate against a user to prevent rate limiting
-    = link_to '@goldteethandco', 'https://twitter.com/goldteethandco', :id => 'twitter-name', :target => '_blank'
-    - Twitter.user_timeline("goldteethandco", :count => 4).each do |tweet|
-      .tweet
-        .ago
-          = "#{time_ago_in_words tweet.created_at} ago"
-        = tweet.text.gsub(/(http:\/\/\S*)/, '<a href="\1" target="_blank">\1</a>').html_safe
   #instafeed
     #instafeed-title instafeed
     - Instagram.user_media_feed(:count => 25).data.each_with_index do |data, i|

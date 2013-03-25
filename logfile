@@ -3441,3 +3441,54 @@ STATEMENT:  CREATE TABLE "artist_thumbs" ("id" serial primary key, "image" chara
 ERROR:  database "da34kipm81g36s" does not exist
 STATEMENT:  DROP DATABASE da34kipm81g36s;
 	
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+LOG:  could not open temporary statistics file "pg_stat_tmp/pgstat.tmp": No space left on device
+WARNING:  pgstat wait timeout
+LOG:  could not open temporary statistics fiFATAL:  lock file "postmaster.pid" already exists
+HINT:  Is another postmaster (PID 78344) running in data directory "/usr/local/var/postgres"?
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+FATAL:  terminating connection due to administrator command
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-03-25 14:53:09 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+LOG:  received fast shutdown request
+LOG:  aborting any active transactions
+LOG:  autovacuum launcher shutting down
+LOG:  shutting down
+LOG:  database system is shut down
+LOG:  database system was shut down at 2013-03-25 14:53:30 EDT
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
