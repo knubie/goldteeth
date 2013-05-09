@@ -13,7 +13,7 @@
     #right
       #tumblr.social
         - @slides.to_enum.with_index(1).each do |slide, i|
-          = link_to "http://www.tumblr.com/share/photo?source=#{slide.image.non_retina.url}&caption=#{Rack::Utils.escape strip_tags @desc}", :target => "_blank" do
+          = link_to "http://www.tumblr.com/share/photo?source=#{Rack::Utils.escape slide.image.non_retina.url}&caption=#{Rack::Utils.escape strip_tags @desc}", :target => "_blank" do
             = image_tag "tumblr.png"
             tumblr
       -##pin-it.social
