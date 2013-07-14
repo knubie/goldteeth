@@ -5,7 +5,7 @@
       = link_to lightbox_pdf_path(:format => :pdf), :id => "download-pdf" do
         = image_tag("download_up.gif")
         download PDF
-  - if @slides.empty?
+  - if @slides.empty? and @post_slides.empty?
     #sorry
       Your lightbox is empty. You can add slides from artists' projects.
   - else
