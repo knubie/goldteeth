@@ -5,15 +5,27 @@
     .date
       Lightbox &ndash; 
       = Time.now.strftime("%m/%e/%Y")
-  - session[:slides].each do |slide|
-    .page
-      = wicked_pdf_image_tag "logo_print.gif"
-      .line
-      = image_tag Slide.find(slide).image.non_retina.url
-      .caption
-        = Slide.find(slide).project.artist.name
-        .slash &nbsp;/&nbsp;
-        .second= Slide.find(slide).project.title
-      .footer
-        = Information.first.contact.html_safe
-
+  - session[:slides][:project].each do |slide|
+    - if Slide.exists?(slide) and !Slide.find(slide).video.present?
+      .page
+        = wicked_pdf_image_tag "logo_print.gif"
+        .line
+        = image_tag Slide.find(slide).image.non_retina.url
+        .caption
+          = Slide.find(slide).project.artist.name
+          .slash &nbsp;/&nbsp;
+          .second= Slide.find(slide).project.title
+        .footer
+          = Information.first.contact.html_safe
+  - session[:slides][:post].each do |slide|
+    - if PostImage.exists?(slide) and !PostImage.find(slide).video.present?
+      .page
+        = wicked_pdf_image_tag "logo_print.gif"
+        .line
+        = image_tag PostImage.find(slide).image.non_retina.url
+        .caption
+          = PostImage.find(slide).post.artist.name
+          .slash &nbsp;/&nbsp;
+          .second= PostImage.find(slide).post.client
+        .footer
+          = Information.first.contact.html_safe

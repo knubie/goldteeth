@@ -26,7 +26,7 @@
     $next = options.next
     $prev = options.prev
     $counter = options.counter
-    $lightbox = $("#lightbox")
+    $lightbox = this.siblings().find("#lightbox")
 
     transitioning = false
 
@@ -70,7 +70,10 @@
           $currentSocial.show()
           $currentSlide.fadeIn ->
             transitioning = false
-            $lightbox.attr('href', "/lightbox/add/#{$('#slides > .slide:visible > img').attr('data-id')}") if $lightbox.length
+            if $lightbox.length
+              model = $lightbox.attr('data-model')
+              id = $images.eq(slideIndex-1).children().first().attr('data-id')
+              $lightbox.attr('href', "/lightbox/add/#{model}/#{id}")
 
     # Set up DOM elements
     $next.click ->
@@ -80,7 +83,7 @@
       transition 'prev'
 
     $counter.html(slideIndex)
-    $lightbox.attr('href', "/lightbox/add/#{$images.eq(slideIndex-1).children().first().attr('data-id')}")
+    $lightbox.attr('href', "/lightbox/add/#{$lightbox.attr('data-model')}/#{$images.eq(slideIndex-1).children().first().attr('data-id')}")
 
     return this # Maintain jQuery chainability
 

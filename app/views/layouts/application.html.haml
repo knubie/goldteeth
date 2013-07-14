@@ -21,17 +21,11 @@
           - if @page != "lightbox"
             = link_to lightbox_path, :id => "lightbox-nav" do
               = responsive_image_tag 'lightbox_up.gif', :id => "lightbox-nav-img", :width => 11
-              - unless session[:slides]
-                %span.count (0)
-              - else
-                %span.count= "(#{session[:slides].length})"
+              %span.count= "(#{lightbox_count})"
               lightbox
           - else
             = responsive_image_tag 'lightbox_down.gif', :id => "lightbox-nav-img", :width => 11
-            - unless session[:slides]
-              %span.count (0)
-            - else
-              %span.count= "(#{session[:slides].length})"
+            %span.count= "(#{lightbox_count})"
             lightbox
       = yield
       #footer

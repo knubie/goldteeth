@@ -14,7 +14,7 @@
           - if post_image.video.present?
             %iframe(src="http://player.vimeo.com/video/#{post_image.video}?title=0&byline=0&portrait=0&color=ffffff" width="900" height="506" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen)
           - else
-            = responsive_image_tag post_image.image.non_retina.url
+            = responsive_image_tag post_image.image.non_retina.url, :data => {:id => post_image.id}
           - if post_image.caption.present?
             .caption
               = post_image.caption
@@ -43,6 +43,14 @@
     = link_to "http://twitter.com/intent/tweet?url=#{url_encode post_url(post)}&text=#{url_encode post.artist.name if post.artist.present?}%20%2F%20#{url_encode post.client if post.client.present?}", :target => "_blank" do
       = image_tag "twitter.gif"
       tweet
+    - if post.post_images.length > 1
+      = link_to "", :data => {:model => 'post'}, :id => "lightbox", :remote => true do
+        = image_tag "add_to_lightbox.gif", :style => "margin-bottom: -2px;"
+        add to lightbox
+    - else
+      = link_to "lightbox/add/post/#{post.post_images.first.id}", :remote => true do
+        = image_tag "add_to_lightbox.gif", :style => "margin-bottom: -2px;"
+        add to lightbox
     - unless params[:action] == 'show'
       = link_to post_path(post.id) do
         = responsive_image_tag "link.gif", :width => 13

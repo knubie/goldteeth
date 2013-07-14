@@ -12,10 +12,20 @@
     #lightbox-grid
       - @slides.each do |slide|
         .project.lightbox{:data => {:id => slide.id}}
-          = link_to lightbox_remove_path(slide.id), :class => 'close', :remote => true do
+          = link_to lightbox_remove_path('project', slide.id), :class => 'close', :remote => true do
             = image_tag 'close.gif'
           = responsive_image_tag slide.image.non_retina_thumb.url
           .caption
             .artist-name= slide.project.artist.name
             .slash= "/"
             .client= slide.project.title
+      - @post_slides.each do |slide|
+        - unless slide.video.present?
+          .project.lightbox{:data => {:id => slide.id}}
+            = link_to lightbox_remove_path('post', slide.id), :class => 'close', :remote => true do
+              = image_tag 'close.gif'
+            = responsive_image_tag slide.image.non_retina_thumb.url
+            .caption
+              .artist-name= slide.post.artist.name
+              .slash= "/"
+              .client= slide.post.client

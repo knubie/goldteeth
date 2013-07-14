@@ -13,7 +13,7 @@
     #right
       #tumblr.social
         - @slides.to_enum.with_index(1).each do |slide, i|
-          = link_to "http://www.tumblr.com/share/photo?source=#{Rack::Utils.escape slide.image.non_retina.url}&caption=#{Rack::Utils.escape strip_tags @desc}", :target => "_blank" do
+          = link_to "http://www.tumblr.com/share/photo?source=#{url_encode slide.image.non_retina.url}", :target => "_blank" do
             = image_tag "tumblr.png"
             tumblr
       -##pin-it.social
@@ -31,7 +31,7 @@
           = link_to "http://twitter.com/intent/tweet?url=#{url_encode project_url(@artist.name.downcase.gsub(" ", "-"), @project.title.downcase.gsub(" ", "-"))}?slide=#{i}", :target => "_blank" do
             = image_tag "twitter.gif"
             tweet
-      = link_to "", :id => "lightbox", :remote => true do
+      = link_to "", :data => {:model => 'project'}, :id => "lightbox", :remote => true do
         = image_tag "add_to_lightbox.gif", :style => "margin-bottom: -2px;"
         add to lightbox
   #slides
